@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import {RectangleArrowButton} from "../../Buttons/RectangleButton";
+import GroupSocialButons from "../../Buttons/SocialButtons";
 import OrSeperator from "../../Seperators/OrSeperator";
 import PageHeader from "../../Text/PageHeader";
 import TextLink from "../../Text/TextLink";
@@ -19,17 +20,15 @@ const RegisterForm: FC<Props> = ({}) => {
             <PageHeader text="Register" />
             <div className="form">
                 <InputField title="Name" placeHolder="" text={name} setText={setName} />
-                <br></br>
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
-                <br></br>
                 <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
-                <br></br>
                 <InputField title="Password" placeHolder="" text={password} setText={setPassword} />
             </div>
             <br></br>
             <RectangleArrowButton text="Register" onPress={() => {console.log("print")}} />
             <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />
-            <OrSeperator />          
+            <OrSeperator />   
+            <GroupSocialButons />       
         </div>
     );
 }
