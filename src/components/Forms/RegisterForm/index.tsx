@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import {RectangleArrowButton} from "../../Buttons/RectangleButton";
+import OrSeperator from "../../Seperators/OrSeperator";
 import PageHeader from "../../Text/PageHeader";
 import TextLink from "../../Text/TextLink";
 import InputField from "../../TextFields";
@@ -27,7 +28,8 @@ const RegisterForm: FC<Props> = ({}) => {
             </div>
             <br></br>
             <RectangleArrowButton text="Register" onPress={() => {console.log("print")}} />
-            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />                  
+            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />
+            <OrSeperator />          
         </div>
     );
 }
