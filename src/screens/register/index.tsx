@@ -1,5 +1,7 @@
 import React, { FC} from "react"
+import RegisterForm from "../../components/Forms/RegisterForm";
 import Sidebar from "../../components/Images/Sidebar";
+import InputField from "../../components/TextFields";
 import './styles.css';
 
 const RegisterScreen: FC = () => {
@@ -7,8 +9,7 @@ const RegisterScreen: FC = () => {
         <>
             <div className="page">
                 <Sidebar />
-                <h1>Register</h1>
-                <h2>Register</h2>
+                <RegisterForm />
             </div>
         </>
     );

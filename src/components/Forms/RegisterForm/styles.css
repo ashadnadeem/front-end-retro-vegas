@@ -1,0 +1,14 @@
+.form {
+    flex-direction: column;
+    width: 50%;
+    align-items: right;
+    align-self: center;
+}
+
+.register_form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
