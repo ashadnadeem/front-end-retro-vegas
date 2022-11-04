@@ -15,6 +15,12 @@ const RegisterForm: FC<Props> = ({}) => {
     const [email, setEmail] = React.useState("");
     const [phoneNum, setPhoneNum] = React.useState("");
     const [password, setPassword] = React.useState("");
+    
+    //Social Login function
+    const socialLogin = () => {
+        console.log("Social Login coming soon");
+    }
+    
     return(
         <div className="register_form">
             <PageHeader text="Register" />
@@ -27,8 +33,8 @@ const RegisterForm: FC<Props> = ({}) => {
             <br></br>
             <RectangleArrowButton text="Register" onPress={() => {console.log("print")}} />
             <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />
-            <OrSeperator />   
-            <GroupSocialButons />       
+            <OrSeperator />
+            <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
         </div>
     );
 }
