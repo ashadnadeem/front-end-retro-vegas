@@ -1,0 +1,29 @@
+.socialicon{
+    width: 25%;
+    height: 25%;
+    padding: 10px;
+}
+
+.socialgroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 10%;
+}
+
+.socialicons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.socialtext{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+}

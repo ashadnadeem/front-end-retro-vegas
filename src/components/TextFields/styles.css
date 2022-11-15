@@ -1,0 +1,21 @@
+
+.input{
+    flex-direction: column;
+    background-color: #835F2A40;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: rgba(131, 95, 42, 0.25);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}

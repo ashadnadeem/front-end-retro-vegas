@@ -1,18 +1,18 @@
 import React, { FC} from "react"
-import RegisterForm from "../../components/Forms/RegisterForm";
+import LoginForm from "../../components/Forms/LoginForm";
 import Sidebar from "../../components/Images/Sidebar";
 import InputField from "../../components/TextFields";
 import './styles.css';
 
-const RegisterScreen: FC = () => {
+const LoginScreen: FC = () => {
     return (
         <>
             <div className="page">
                 <Sidebar />
-                <RegisterForm />
+                <LoginForm />
             </div>
         </>
     );
 }
 
-export default RegisterScreen;
+export default LoginScreen;

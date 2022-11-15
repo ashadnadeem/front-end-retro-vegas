@@ -1,0 +1,22 @@
+.buttongroup {
+    width: 28%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: #000000;
+}
+
+.buttonicon{
+    width: 30px;
+    height: 30px;
+}
+
+.buttontext{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #D9D9D9;
+}

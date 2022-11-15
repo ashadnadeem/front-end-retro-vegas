@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       {/* <RegisterScreen /> */}
-      <LoginScreen/>
+      <LoginScreen />
     </div>
   );
 }
