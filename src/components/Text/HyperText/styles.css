@@ -1,9 +1,8 @@
 .hyperText{
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
-    font-size: 23px;
+    font-weight: bold;
+    font-size: 15px;
     line-height: 28px;
     color: #6D5229;
-    text-decoration: underline;
 }

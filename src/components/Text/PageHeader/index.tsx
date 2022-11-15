@@ -7,10 +7,10 @@ type Props = {
     text: string;
 }
 
-const BackButton: FC<Props> = ({ text }) => {
+const PageHeader: FC<Props> = ({ text }) => {
     return(
         <label className="header">{text}</label>
     );
 }
 
-export default BackButton;
+export default PageHeader;

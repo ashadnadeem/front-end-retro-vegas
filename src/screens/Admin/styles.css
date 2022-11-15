@@ -1,0 +1,31 @@
+.page {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+    color: rgba(131, 95, 42, 0.9);
+    padding: 30px;
+}
+
+.statsPanel {
+    width: 80%;
+    height: 150px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #835F2A40; 
+}
