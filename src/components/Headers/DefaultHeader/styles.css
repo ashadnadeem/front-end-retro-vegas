@@ -18,8 +18,9 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 20px;
     color: #000000;
+    padding: 5px 10px;
 }
 
 .raised-button {
@@ -43,6 +44,8 @@
 }
 
 .menu {
-    padding: 10px 50px;
+    display: flex;
     flex-direction: row;
+    gap: 20px;
+    align-items: center;
 }

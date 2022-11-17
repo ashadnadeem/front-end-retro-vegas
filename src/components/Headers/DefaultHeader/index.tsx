@@ -1,5 +1,5 @@
 import { Person, ShoppingCart } from "@mui/icons-material";
-import { Button, IconButton } from "@mui/material";
+import { Button as h1, IconButton } from "@mui/material";
 import React, { FC } from "react";
 
 import "./styles.css";
@@ -16,10 +16,10 @@ const DefaultHeader: FC<Props> = ({}) => {
             <label className="logo">Logo</label>
             <div className="menu">
                 {/* Maerial UI text */}
-                <Button className="text" variant="text" color="inherit">About</Button>
-                <Button className="text" variant="text" color="inherit">Collections</Button>
-                <Button className="text" variant="text" color="inherit">Acuctions</Button>
-                <Button className="text" variant="text" color="inherit">Favourites</Button>
+                <h1 className="text" color="inherit" onClick={onSellItemClick}>About</h1>
+                <h1 className="text" color="inherit">Collections</h1>
+                <h1 className="text" color="inherit">Acuctions</h1>
+                <h1 className="text" color="inherit">Favourites</h1>
                 <label className="raised-button" onClick={onSellItemClick}>Sell Items</label>
                 <IconButton className='icon' aria-label="account" color='inherit' size="medium">
                     <Person />
