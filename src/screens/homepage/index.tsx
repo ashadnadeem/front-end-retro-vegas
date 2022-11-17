@@ -10,7 +10,7 @@ const HomePageScreen: FC = () => {
         <>
             <div className="page">
                 <div className="header">
-                    <DefaultHeader />
+                    <DefaultHeader inverted={false}/>
                 </div>
                 <div className="content">
                     <div className="greet">

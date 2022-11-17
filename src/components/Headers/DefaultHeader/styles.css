@@ -6,6 +6,15 @@
     padding-right: 10px;
 }
 
+.headerBgInvert {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 10px;
+    background-color: #000000d6;
+}
+
 .logo {
     font-family: 'Inter';
     font-style: normal;
@@ -14,12 +23,30 @@
     line-height: 36px;
 }
 
+.logoInvert {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #E7DCCA;
+}
+
 .text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     color: #000000;
+    padding: 5px 10px;
+}
+
+.textInvert {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #E7DCCA;
     padding: 5px 10px;
 }
 
@@ -32,6 +59,20 @@
     color: #ffffff;
     padding: 8px 25px;
     margin: 30px;
+}
+
+.raised-button-invert {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #000000;
+    padding: 8px 25px;
+    margin: 30px;
+    background: #E7DCCA;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
 }
 
 .logout {
@@ -48,4 +89,12 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
+}
+
+.menuInvert {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    color: #E7DCCA;
 }
