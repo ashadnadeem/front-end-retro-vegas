@@ -5,6 +5,7 @@ import AdminScreen from './screens/Admin/MainPage';
 import LoginScreen from './screens/login';
 import RegisterScreen from './screens/register';
 import HomePageScreen from './screens/homepage';
+import AboutScreen from './screens/aboutpage';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       {/* <RegisterScreen /> */}
       {/* <LoginScreen /> */}
       {/* <AdminScreen/> */}
-      <AdminCustomersScreen/>
+      {/* <AdminCustomersScreen/> */}
       {/* <HomePageScreen /> */}
+      <AboutScreen />
     </div>
   );
 }
