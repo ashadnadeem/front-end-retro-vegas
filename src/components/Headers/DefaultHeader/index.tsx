@@ -13,17 +13,18 @@ const DefaultHeader: FC<Props> = ({}) => {
     }
     return(
         <div className="headerBg">
-            <label className="text">Logo</label>
+            <label className="logo">Logo</label>
             <div className="menu">
-                <label className="text">About</label>
-                <label className="text">Colections</label>
-                <label className="text">Auctions</label>
-                <label className="text">Favourites</label>
+                {/* Maerial UI text */}
+                <Button className="text" variant="text" color="inherit">About</Button>
+                <Button className="text" variant="text" color="inherit">Collections</Button>
+                <Button className="text" variant="text" color="inherit">Acuctions</Button>
+                <Button className="text" variant="text" color="inherit">Favourites</Button>
                 <label className="raised-button" onClick={onSellItemClick}>Sell Items</label>
-                <IconButton aria-label="account">
+                <IconButton className='icon' aria-label="account" color='inherit' size="medium">
                     <Person />
                 </IconButton>
-                <IconButton aria-label="cart" color='inherit'>
+                <IconButton className='icon' aria-label="cart" color='inherit' size="medium">
                     <ShoppingCart />
                 </IconButton>
                 
