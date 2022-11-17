@@ -1,0 +1,28 @@
+.oneStats {
+    width: 30%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.stat {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    color: rgba(131, 95, 42, 0.9);
+}
+
+.stat-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import AdminScreen from './screens/Admin';
+import AdminCustomersScreen from './screens/Admin/CustomersPage';
+import AdminScreen from './screens/Admin/MainPage';
 import LoginScreen from './screens/login';
 import RegisterScreen from './screens/register';
 
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       {/* <RegisterScreen /> */}
       {/* <LoginScreen /> */}
-      <AdminScreen/>
+      {/* <AdminScreen/> */}
+      <AdminCustomersScreen/>
     </div>
   );
 }

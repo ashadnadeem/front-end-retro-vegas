@@ -1,0 +1,87 @@
+.page {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+    color: rgba(131, 95, 42, 0.9);
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.statsPanel {
+    width: 80%;
+    height: 150px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #835F2A40; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttonsPanel {
+    width: 80%;
+    height: 150px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button {
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 30%;
+    height: 150px;
+    border-radius: 20px;
+    background-color: #835F2A90; 
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.button-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    padding-left: 30px;
+    color: black;
+}
+
+.button-text2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    padding: 10px;
+    padding-left: 30px;
+    color: black;
+}
+
+.button-text3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;
+    text-align: end;
+    color: black;
+    padding-top: 10px;
+    padding-right: 50px;
+}
+

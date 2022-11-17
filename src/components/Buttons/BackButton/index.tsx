@@ -1,6 +1,4 @@
 import React, { FC } from "react";
-
-
 import "./syles.css";
 
 type Props = {
@@ -9,9 +7,8 @@ type Props = {
 
 const BackButton: FC<Props> = ({ onPress }) => {
     return(
-        <button className='backIcon' onClick={onPress} >
-            <img src={require('../../assets/icons/back-arrow.png')} />
-        </button>
+        <img src={require('../../../assets/icons/back_arrow.png')} alt= "back" 
+            className= "back" onClick={onPress}/>
     );
 }
 

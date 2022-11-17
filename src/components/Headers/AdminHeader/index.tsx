@@ -10,7 +10,7 @@ const AdminHeader: FC<Props> = ({}) => {
         <div className="headerBg">
             <label className="text">Admin Portal</label>
             <div className="menu">
-                <label className="text">Customers</label>
+                <label className="text" onClick={() => {console.log('customer')}}>Customers</label>
                 <label className="text">Sellers</label>
                 <label className="text">Admins</label>
                 <label className="logout">Logout</label>
