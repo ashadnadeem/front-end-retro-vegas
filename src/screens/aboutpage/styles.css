@@ -1,0 +1,75 @@
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.header{
+    height: 10%;
+    padding-bottom: 20vh;
+}
+.content{
+    height: 80%;
+    width: 100%;
+    margin-top: -35vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10%;
+}
+
+.greet_text{
+    width: 40%;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* text-shadow: h-shadow v-shadow blur-radius color; */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    color: rgba(131, 95, 42, 0.64);
+
+    margin: 0px;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 20px;
+}
+
+.para{
+    width: 60%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.elipses1{
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 20%;
+    top: 60%;
+
+    background: #E1B066;
+    opacity: 0.3;
+    filter: blur(70px);
+}
+.elipses2{
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 5%;
+    top: 15%;
+
+    background: #E1B066;
+    opacity: 0.3;
+    filter: blur(70px);
+}

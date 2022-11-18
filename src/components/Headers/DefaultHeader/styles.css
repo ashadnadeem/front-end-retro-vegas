@@ -1,4 +1,5 @@
 .headerBg {
+    height: 60%;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -7,6 +8,7 @@
 }
 
 .headerBgInvert {
+    height: 60%;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -20,7 +22,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
-    line-height: 36px;
 }
 
 .logoInvert {
