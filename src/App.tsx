@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       {/* <RegisterScreen /> */}
-      {/* <LoginScreen /> */}
+      <LoginScreen />
       {/* <AdminScreen/> */}
-      <AdminCustomersScreen/>
+      {/* <AdminCustomersScreen/> */}
       {/* <HomePageScreen /> */}
     </div>
   );

@@ -1,9 +1,8 @@
 import React, { FC} from "react"
+import StatContainer from "../../../components/Containers/StatsContainer";
 import { AdminHeader } from "../../../components/Headers/AdminHeader";
 
 import './styles.css';
-import StatContainer from "../../../components/Forms copy/StatsContainer";
-
 const AdminScreen: FC = () => {
     return (
         <>

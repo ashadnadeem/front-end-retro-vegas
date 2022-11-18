@@ -2,6 +2,7 @@
 .input{
     flex-direction: column;
     background-color: #835F2A40;
+    color: #000;
     width: 100%;
     height: 40px;
     border: none;
