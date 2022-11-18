@@ -15,6 +15,7 @@ const InputField: FC<Props> = ({ title, placeHolder, text, setText }) => {
             <input
                 className="input"
                 placeholder={placeHolder}
+                value = {text}
                 onChange={e => setText(e.target.value)}
             />
         </div>

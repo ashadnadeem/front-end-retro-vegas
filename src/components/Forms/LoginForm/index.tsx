@@ -25,7 +25,8 @@ const LoginForm: FC<Props> = ({}) => {
             email: email,
             password: password
         }).then((response) => {
-          console.log(response.data);
+            localStorage.setItem('accessToken', JSON.stringify(response.data.accessToken));
+            localStorage.setItem('user', JSON.stringify(response.data.user));
         });
     }
     

@@ -7,17 +7,19 @@ import RegisterScreen from './screens/register';
 import HomePageScreen from './screens/homepage';
 import AboutScreen from './screens/aboutpage';
 import CollectionScreen from './screens/collectionpage';
+import CustomerProfileScreen from './screens/Customer/ProfilePage';
 
 function App() {
   return (
     <div className="App">
       {/* <RegisterScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
       {/* <AdminScreen/> */}
       {/* <AdminCustomersScreen/> */}
+      <CustomerProfileScreen/>
       {/* <HomePageScreen /> */}
       {/* <AboutScreen /> */}
-      <CollectionScreen />
+      {/* <CollectionScreen /> */}
     </div>
   );
 }
