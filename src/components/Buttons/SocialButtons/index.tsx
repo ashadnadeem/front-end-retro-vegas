@@ -34,7 +34,7 @@ const FacebookButton: FC<SocialButtonProps> = ({onclick}) => {
 const GroupSocialButons: FC<Props> = ({text, google, facebook, instagram}) => {
     return(
         <div className="socialgroup">
-            <label className="text">{text}</label>
+            <label className="socialtext">{text}</label>
             <div className="socialicons">
                 <FacebookButton onclick={facebook} />
                 <GoogleButton onclick={google}/>

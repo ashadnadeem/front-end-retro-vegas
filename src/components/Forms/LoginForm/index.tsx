@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { FC } from "react";
 import {RectangleArrowButton} from "../../Buttons/RectangleButton";
 import GroupSocialButons from "../../Buttons/SocialButtons";
@@ -18,6 +19,15 @@ const LoginForm: FC<Props> = ({}) => {
     const socialLogin = () => {
         console.log("Social Login coming soon");
     }
+
+    const login = () => {
+        axios.post('http://localhost:5000/auth/login', {
+            email: email,
+            password: password
+        }).then((response) => {
+          console.log(response.data);
+        });
+    }
     
     return(
         <div className="login_form">
@@ -27,8 +37,7 @@ const LoginForm: FC<Props> = ({}) => {
                 <br></br>
                 <InputField title="Password" placeHolder="" text={password} setText={setPassword} />
             </div>
-            <br></br>
-            <RectangleArrowButton text="Sign In" onPress={() => {console.log("print")}} />
+            <RectangleArrowButton text="Sign In" onPress={login} />
             <TextLink text="Don't have an account? " hyperText="Sign up" onClick={() => {console.log("login page")}} />
             <OrSeperator />
             <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
