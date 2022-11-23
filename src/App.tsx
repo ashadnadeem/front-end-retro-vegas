@@ -7,6 +7,7 @@ import RegisterScreen from './screens/register';
 import HomePageScreen from './screens/homepage';
 import AboutScreen from './screens/aboutpage';
 import CollectionScreen from './screens/collectionpage';
+import AuctionScreen from './screens/auctionpage';
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
       {/* <LoginScreen /> */}
       {/* <AdminScreen/> */}
       {/* <AdminCustomersScreen/> */}
-      {/* <HomePageScreen /> */}
+      <HomePageScreen />
       {/* <AboutScreen /> */}
-      <CollectionScreen />
+      {/* <CollectionScreen /> */}
+      {/* <AuctionScreen /> */}
     </div>
   );
 }
