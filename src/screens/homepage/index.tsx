@@ -15,7 +15,7 @@ const HomePageScreen: FC = () => {
                 <div className="content">
                     <div className="greet">
                         <h1 className="greet_text">Hello,</h1>
-                        <h1 className="greet_text" style={{'paddingLeft':'100px'}}>John Doe</h1>
+                        <h1 className="greet_text" style={{'paddingLeft':'100px'}}>Khaulah!</h1>
                     </div>
                     <h1 className="title">Buy your favourite antique items.</h1>
                     <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />

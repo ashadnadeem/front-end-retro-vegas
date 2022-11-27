@@ -1,0 +1,25 @@
+.fav {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(131, 95, 48, 1);
+}
+.fav:hover {
+    color: rgba(211, 187, 152, 0.5);
+}
+
+.unfav{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(131, 95, 48, 0.2);
+}
+.unfav:hover {
+    color: rgba(131, 95, 48, 0.5);
+}
