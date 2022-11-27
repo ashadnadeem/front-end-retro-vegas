@@ -1,5 +1,6 @@
 import React, { FC} from "react"
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
+import CollectionCard from "../../components/Cards/CollectionCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
 import SearchBar from "../../components/SearchBar";
 import './styles.css';
@@ -22,10 +23,7 @@ const CollectionScreen: FC = () => {
                         {/* map for 6 items */}
                         {items.map((item, index, key) => {
                             return (
-                                <div className="item">
-                                    <img className="item_image" src={item["image"]}/>
-                                    <h1 className="item_title">{item["name"] + index}</h1>
-                                </div>
+                                <CollectionCard index={index} title={item['name']} image={item['image']}/>
                             );
                         })}
                     </div>
