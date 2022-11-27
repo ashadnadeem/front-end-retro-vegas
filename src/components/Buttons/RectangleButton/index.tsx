@@ -1,3 +1,4 @@
+import { ArrowForward } from "@mui/icons-material";
 import React, { FC } from "react";
 
 import "./styles.css";
@@ -13,7 +14,7 @@ const RectangleArrowButton: FC<Props> = ({ text, invert, onPress }) => {
     return(
         <button className={invert?"buttongroup_invert":"buttongroup"} onClick={onPress}>
             <label className={invert?"buttontext_invert":"buttontext"}>{text}</label>
-            <img className="buttonicon" src={require("../../../assets/icons/forward_arrow.png")} />
+            <ArrowForward className="buttonicon" />
         </button>
     );
 }
