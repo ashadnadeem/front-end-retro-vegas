@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="App">
       {/* <RegisterScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
       {/* <AdminScreen/> */}
       {/* <AdminCustomersScreen/> */}
-      <HomePageScreen />
+      {/* <HomePageScreen /> */}
       {/* <AboutScreen /> */}
       {/* <CollectionScreen /> */}
-      {/* <AuctionScreen /> */}
+      <AuctionScreen />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { FC} from "react"
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
+import CollectionCard from "../../components/Cards/CollectionCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
 import SearchBar from "../../components/SearchBar";
 import './styles.css';
@@ -17,15 +18,17 @@ const AuctionScreen: FC = () => {
                     <DefaultHeader inverted={true}/>
                 </div>
                 <div className="content">
-                    <h1 className="title">Collections</h1>
+                    <div className="title_header">
+                        <div></div>
+                        <h1 className="title">Auction</h1>
+                        <RectangleArrowButton invert text="My Bids" onPress={function (): void {}}/>
+                    </div>
+                    <h1 className="sub_title">Following Products are up on auction. Bid on your favourite products today to enhance your collection.</h1>
                     <div className="gallery">
                         {/* map for 6 items */}
                         {items.map((item, index, key) => {
                             return (
-                                <div className="item">
-                                    <img className="item_image" src={item["image"]}/>
-                                    <h1 className="item_title">{item["name"] + index}</h1>
-                                </div>
+                                <CollectionCard index={index} title={item['name']} image={item['image']}/>
                             );
                         })}
                     </div>

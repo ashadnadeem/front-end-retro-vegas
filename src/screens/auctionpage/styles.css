@@ -7,6 +7,13 @@
     height: 10%;
     padding-bottom: 0vh;
 }
+.title_header{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 .content{
     display: flex;
     flex-direction: column;
@@ -16,6 +23,8 @@
 }
 
 .title{
+    display: flex;
+    padding-left: 15%;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -23,7 +32,18 @@
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     color: rgba(131, 95, 42, 0.64);
 }
-
+.sub_title{
+    width: 70%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+}
 .gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -31,25 +51,3 @@
     width: 90%;
 }
 
-.item_image{
-    width: 300px;
-    height: 250px;
-    border-radius: 10px;
-    background-color: rgba(131, 95, 42, 0.64);  
-}
-
-.item_title{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 30px;
-    color: #000000;
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
