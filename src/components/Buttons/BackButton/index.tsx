@@ -1,3 +1,4 @@
+import { ArrowBack } from "@mui/icons-material";
 import React, { FC } from "react";
 import "./syles.css";
 
@@ -7,8 +8,9 @@ type Props = {
 
 const BackButton: FC<Props> = ({ onPress }) => {
     return(
-        <img src={require('../../../assets/icons/back_arrow.png')} alt= "back" 
-            className= "back" onClick={onPress}/>
+        <div>
+            <ArrowBack color={"inherit"} className="icon" onClick={onPress}/>
+        </div>
     );
 }
 

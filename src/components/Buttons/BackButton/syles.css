@@ -1,11 +1,7 @@
-.back {
-    position: absolute;
-    width: 30px;
-    height: 30px;
+.icon {
+    width: 42px;
+    height: 42px;
     padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
 }

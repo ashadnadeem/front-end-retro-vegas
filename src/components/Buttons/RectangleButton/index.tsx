@@ -6,7 +6,6 @@ import "./styles.css";
 type Props = {
     text: string;
     invert?: boolean;
-    image?: string;
     onPress(): void;
 }
 
@@ -22,7 +21,7 @@ const RectangleArrowButton: FC<Props> = ({ text, invert, onPress }) => {
 const RectangleButton: FC<Props> = ({ text, onPress }) => {
     return(
         <button className="buttongroup" onClick={onPress}>
-            <label className="buttontext">{text}</label>
+            <label className="button_text">{text}</label>
         </button>
     );
 }
