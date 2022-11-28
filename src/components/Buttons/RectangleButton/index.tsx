@@ -12,7 +12,7 @@ type Props = {
 const RectangleArrowButton: FC<Props> = ({ text, invert, onPress }) => {
     return(
         <button className={invert?"buttongroup_invert":"buttongroup"} onClick={onPress}>
-            <label className={invert?"buttontext_invert":"buttontext"}>{text}</label>
+            <label className={invert?"buttontext_invert":"button_text"}>{text}</label>
             <ArrowForward className="buttonicon" />
         </button>
     );

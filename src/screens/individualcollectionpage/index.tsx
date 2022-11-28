@@ -7,7 +7,12 @@ import { DefaultHeader } from "../../components/Headers/DefaultHeader";
 import SearchBar from "../../components/SearchBar";
 import './styles.css';
 
-const IndividualCollectionScreen: FC = () => {
+type Props = {
+    category_id: string;
+};
+
+const IndividualCollectionScreen: FC<Props> = ({category_id}) => {
+    //ApI call to get the products from the category id
     const item: Object = {
         "name": "Dagger",
         "image": "https://images.unsplash.com/photo-1588597574944-5e581eeef359?ixlib=rb-4.0.3&dl=igor-bispo-78MIXkDUs3E-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb"
