@@ -7,6 +7,7 @@ import RegisterScreen from './screens/register';
 import HomePageScreen from './screens/homepage';
 import AboutScreen from './screens/aboutpage';
 import CollectionScreen from './screens/collectionpage';
+import CustomerProfileScreen from './screens/Customer/ProfilePage';
 import AuctionScreen from './screens/auctionpage';
 import FavouriteScreen from './screens/favouritepage';
 import IndividualCollectionScreen from './screens/individualcollectionpage';
@@ -21,15 +22,13 @@ function App() {
       {/* <LoginScreen /> */}
       {/* <AdminScreen/> */}
       {/* <AdminCustomersScreen/> */}
+      {/* <CustomerProfileScreen/> */}
       {/* <HomePageScreen /> */}
       {/* <AboutScreen /> */}
       {/* <CollectionScreen /> */}
-      {/* <AuctionScreen />
+      <AuctionScreen />
       <FavouriteScreen />
-  <IndividualCollectionScreen /> */}
-       <ProductScreen />
-      {/* <ProductDesc/> */}
-      {/* <ProductSection/> */}
+      <IndividualCollectionScreen />
     </div>
   );
 }

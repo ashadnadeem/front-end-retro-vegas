@@ -40,6 +40,10 @@
     font-size: 20px;
     color: #000000;
     padding: 5px 10px;
+    cursor: pointer;
+}
+.text:hover {
+    transform: scale(1.1);
 }
 
 .textInvert {
@@ -49,6 +53,10 @@
     font-size: 20px;
     color: #E7DCCA;
     padding: 5px 10px;
+    cursor: pointer;
+}
+.textInvert:hover {
+    transform: scale(1.1);
 }
 
 .raised-button {
@@ -60,6 +68,9 @@
     color: #ffffff;
     padding: 8px 25px;
     margin: 30px;
+}
+.raised-button:hover {
+    transform: scale(1.1);
 }
 
 .raised-button-invert {
@@ -75,6 +86,9 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
+.raised-button-invert:hover {
+    transform: scale(1.1);
+}
 
 .logout {
     font-family: 'Inter';
@@ -83,6 +97,9 @@
     font-size: 13px;
     color: #E7DCCA;
     padding-left: 80px;
+}
+.logout:hover {
+    transform: scale(1.1);
 }
 
 .menu {

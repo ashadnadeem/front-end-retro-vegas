@@ -25,7 +25,8 @@ const LoginForm: FC<Props> = ({}) => {
             email: email,
             password: password
         }).then((response) => {
-          console.log(response.data);
+            localStorage.setItem('accessToken', JSON.stringify(response.data.accessToken));
+            localStorage.setItem('user', JSON.stringify(response.data.user));
         });
     }
     
@@ -35,7 +36,7 @@ const LoginForm: FC<Props> = ({}) => {
             <div className="form">
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
                 <br></br>
-                <InputField title="Password" placeHolder="" text={password} setText={setPassword} />
+                <InputField title="Password" placeHolder="" text={password} type= 'password' setText={setPassword} />
             </div>
             <RectangleArrowButton text="Sign In" onPress={login} />
             <TextLink text="Don't have an account? " hyperText="Sign up" onClick={() => {console.log("login page")}} />

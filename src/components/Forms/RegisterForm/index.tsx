@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { FC } from "react";
 import {RectangleArrowButton} from "../../Buttons/RectangleButton";
 import GroupSocialButons from "../../Buttons/SocialButtons";
@@ -5,8 +6,8 @@ import OrSeperator from "../../Seperators/OrSeperator";
 import PageHeader from "../../Text/PageHeader";
 import TextLink from "../../Text/TextLink";
 import InputField from "../../TextFields";
-
 import "./styles.css";
+
 type Props = {
 }
 
@@ -15,10 +16,22 @@ const RegisterForm: FC<Props> = ({}) => {
     const [email, setEmail] = React.useState("");
     const [phoneNum, setPhoneNum] = React.useState("");
     const [password, setPassword] = React.useState("");
+
     
     //Social Login function
     const socialLogin = () => {
         console.log("Social Login coming soon");
+    }
+
+    const register = () => {
+        axios.post('http://localhost:5000/auth/register', {
+            email: email,
+            password: password,
+            name: name,
+            phoneNo: phoneNum
+        }).then((response) => {
+          console.log(response.data);
+        });
     }
     
     return(
@@ -28,10 +41,10 @@ const RegisterForm: FC<Props> = ({}) => {
                 <InputField title="Name" placeHolder="" text={name} setText={setName} />
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
                 <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
-                <InputField title="Password" placeHolder="" text={password} setText={setPassword} />
+                <InputField title="Password" placeHolder="" text={password} type = 'password' setText={setPassword} />
             </div>
             <br></br>
-            <RectangleArrowButton text="Register" onPress={() => {console.log("print")}} />
+            <RectangleArrowButton text="Register" onPress={register} />
             <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />
             <OrSeperator />
             <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
