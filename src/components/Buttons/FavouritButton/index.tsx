@@ -9,7 +9,7 @@ type Props = {
 
 const FavButton: FC<Props> = ({ isFav, onPress }) => (
     <div>
-        <Favorite  className={isFav ? "fav": "unfav"} onClick={onPress}/>
+        <Favorite fontSize="large" className={isFav ? "fav": "unfav"} onClick={onPress}/>
     </div>
 )
 

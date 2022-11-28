@@ -11,6 +11,10 @@
     border: 0px;
     filter: blur(0.5px);
 }
+.filterbuttongroup:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+}
 
 .buttonicon{
     width: 36px;

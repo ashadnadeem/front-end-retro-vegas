@@ -1,7 +1,11 @@
-.icon {
-    width: 42px;
-    height: 42px;
-    padding: 20px;
+.back_button_icon {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0px 0px 20px;
+    padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+.back_button_icon:hover {
+    transform: scale(1.2);
 }

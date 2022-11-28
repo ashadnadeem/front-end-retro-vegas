@@ -29,7 +29,7 @@ const IndividualCollectionScreen: FC = () => {
                             <h1 className="mini_title">{"-"}</h1>
                             <h1 className="mini_title">{"watches"}</h1>
                         </div>
-                        <div className="filter_button_placement">
+                        <div className="filter_button">
                             <FilterButton onPress={()=>{console.log("Filter button pressed")}}/>
                         </div>
                     </div>

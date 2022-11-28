@@ -9,7 +9,7 @@ type Props = {
 const BackButton: FC<Props> = ({ onPress }) => {
     return(
         <div>
-            <ArrowBack color={"inherit"} className="icon" onClick={onPress}/>
+            <ArrowBack fontSize="large" className="back_button_icon" onClick={onPress}/>
         </div>
     );
 }
