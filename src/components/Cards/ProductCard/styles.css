@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
 }
-.title{
+.product_title{
     margin-left: -15%;
     font-family: 'Inter';
     font-style: normal;
@@ -36,7 +36,7 @@
     line-height: 0.5;
     color: #000000;
 }
-.owner{
+.product_owner{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -44,7 +44,7 @@
     line-height: 0.25;
     color: #000000;
 }
-.price{
+.product_price{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;

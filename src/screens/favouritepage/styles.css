@@ -1,0 +1,34 @@
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 10%;
+    padding-bottom: 0vh;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2%;
+}
+
+.title{
+    display: flex;
+    padding-left: 15%;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    color: rgba(131, 95, 42, 0.64);
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 90%;
+}
+

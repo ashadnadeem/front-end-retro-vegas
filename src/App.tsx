@@ -8,6 +8,8 @@ import HomePageScreen from './screens/homepage';
 import AboutScreen from './screens/aboutpage';
 import CollectionScreen from './screens/collectionpage';
 import AuctionScreen from './screens/auctionpage';
+import FavouriteScreen from './screens/favouritepage';
+import IndividualCollectionScreen from './screens/individualcollectionpage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       {/* <AboutScreen /> */}
       {/* <CollectionScreen /> */}
       <AuctionScreen />
+      <FavouriteScreen />
+      <IndividualCollectionScreen />
     </div>
   );
 }
