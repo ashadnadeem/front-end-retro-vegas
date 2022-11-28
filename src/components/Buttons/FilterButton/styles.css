@@ -1,0 +1,32 @@
+.filterbuttongroup {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: #E7DCCA;
+    padding: 10px;
+    cursor: pointer;
+    border: 0px;
+    filter: blur(0.5px);
+}
+
+.buttonicon{
+    width: 36px;
+    height: 36px;
+    margin-left: -15%;
+    padding: 0% 10%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttontext{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    color: #231F20;
+    cursor: pointer;
+}
