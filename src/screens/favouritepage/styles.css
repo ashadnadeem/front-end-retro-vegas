@@ -1,23 +1,20 @@
 .page {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .header{
-    height: 10%;
-    padding-bottom: 0vh;
+    height: 10vh;
 }
 .content{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -2%;
 }
 
 .title{
     display: flex;
-    padding-left: 15%;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;

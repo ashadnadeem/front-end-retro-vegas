@@ -42,7 +42,7 @@ const IndividualCollectionScreen: FC = () => {
                         })}
                     </div>
                     <br></br>
-                    <RectangleArrowButton invert text="Load More" onPress={function (): void {}}/>
+                    <RectangleArrowButton invert text="Load-More" onPress={function (): void {}}/>
                 </div>
             </div>
         </>

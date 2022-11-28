@@ -26,8 +26,8 @@ function App() {
       {/* <HomePageScreen /> */}
       {/* <AboutScreen /> */}
       {/* <CollectionScreen /> */}
-      <AuctionScreen />
-      <FavouriteScreen />
+      {/* <AuctionScreen /> */}
+      {/* <FavouriteScreen /> */}
       <IndividualCollectionScreen />
     </div>
   );

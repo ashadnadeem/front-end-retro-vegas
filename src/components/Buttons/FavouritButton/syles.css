@@ -1,13 +1,6 @@
 .fav {
-<<<<<<< HEAD
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    /* padding: 20px; */
-=======
     scale: 1.2;
     padding: 10px;
->>>>>>> 68e118594fdea9b2d7b5aa3ca7070725db192abb
     cursor: pointer;
     transition: all 0.3s ease;
     color: rgba(131, 95, 48, 1);
@@ -18,15 +11,8 @@
 }
 
 .unfav{
-<<<<<<< HEAD
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    /* padding: 20px; */
-=======
     scale: 1.2;
     padding: 10px;
->>>>>>> 68e118594fdea9b2d7b5aa3ca7070725db192abb
     cursor: pointer;
     transition: all 0.3s ease;
     color: rgba(131, 95, 48, 0.2);
