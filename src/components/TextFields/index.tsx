@@ -5,10 +5,11 @@ type Props = {
     title: string;
     text: string;
     setText: (text: any) => void;
+    type?: string;
     placeHolder: string;
 }
 
-const InputField: FC<Props> = ({ title, placeHolder, text, setText }) => {
+const InputField: FC<Props> = ({ title, placeHolder, type, text, setText }) => {
     return (
         <div>
             <label className="title">{title}</label>
@@ -16,6 +17,7 @@ const InputField: FC<Props> = ({ title, placeHolder, text, setText }) => {
                 className="input"
                 placeholder={placeHolder}
                 value = {text}
+                type = {type || 'text'}
                 onChange={e => setText(e.target.value)}
             />
         </div>

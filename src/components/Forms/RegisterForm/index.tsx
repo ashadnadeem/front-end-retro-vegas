@@ -41,7 +41,7 @@ const RegisterForm: FC<Props> = ({}) => {
                 <InputField title="Name" placeHolder="" text={name} setText={setName} />
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
                 <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
-                <InputField title="Password" placeHolder="" text={password} setText={setPassword} />
+                <InputField title="Password" placeHolder="" text={password} type = 'password' setText={setPassword} />
             </div>
             <br></br>
             <RectangleArrowButton text="Register" onPress={register} />

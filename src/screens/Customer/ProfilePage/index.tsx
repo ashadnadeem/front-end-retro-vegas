@@ -1,3 +1,4 @@
+import { Divider, Stack } from "@mui/material";
 import axios from "axios";
 import React, { FC} from "react"
 import BackButton from "../../../components/Buttons/BackButton";
@@ -43,13 +44,32 @@ const CustomerProfileScreen: FC = () => {
                     <div className="profile-data">
                         <PageHeader text={"Profile"}/>
 
-                        <InputField title="Name" placeHolder="" text={name} setText={setName} />
-                        <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
-                        <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
+                        <Stack
+                            direction="row"
+                            divider={
+                                <Divider orientation="vertical" flexItem sx={{ borderRightWidth: 2 }}
+                                style= {{color: '#835F2A9E'}}
+                                />}
+                            spacing={10}
+                        >
+                            <div className="container">
+                                <InputField title="Name" placeHolder="" text={name} setText={setName} />
+                                <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
+                                <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
+                            </div>
+                            <div className="container">
+                                <InputField title="Name" placeHolder="" text={name} setText={setName} />
+                                <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
+                                <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
+                            </div>
+                            
+                        </Stack>
+
                         
+
+                       
                         <br></br>
                         <RectangleArrowButton text="Save" onPress={save} />
-            
 
                     </div>    
                 </div>
