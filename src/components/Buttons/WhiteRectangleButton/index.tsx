@@ -10,17 +10,17 @@ type Props = {
 
 const WhiteRectangleArrowButton: FC<Props> = ({ text, onPress }) => {
     return(
-        <button className="buttongroup" onClick={onPress}>
-            <label className="buttontext">{text}</label>
-            <img className="buttonicon" src={require("../../../assets/icons/blackforwardarrow.png")} />
+        <button className="whitebuttongroup" onClick={onPress}>
+            <label className="whitebuttontext">{text}</label>
+            <img className="whitebuttonicon" src={require("../../../assets/icons/blackforwardarrow.png")} />
         </button>
     );
 }
 
 const WhiteRectangleButton: FC<Props> = ({ text, onPress }) => {
     return(
-        <button className="buttongroup" onClick={onPress}>
-            <label className="buttontext">{text}</label>
+        <button className="whitebuttongroup" onClick={onPress}>
+            <label className="whitebuttontext">{text}</label>
         </button>
     );
 }

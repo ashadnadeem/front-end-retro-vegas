@@ -1,4 +1,4 @@
-.buttongroup {
+.whitebuttongroup {
     width: auto;
     height: 45px;
     display: flex;
@@ -10,13 +10,13 @@
     cursor: pointer;
 }
 
-.buttonicon{
+.whitebuttonicon{
     width: 25px;
     height: 25px;
     padding-left: 20px;
 }
 
-.buttontext{
+.whitebuttontext{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;

@@ -10,6 +10,9 @@ import CollectionScreen from './screens/collectionpage';
 import AuctionScreen from './screens/auctionpage';
 import FavouriteScreen from './screens/favouritepage';
 import IndividualCollectionScreen from './screens/individualcollectionpage';
+import ProductScreen from './screens/productscreen';
+import ProductDesc from './components/ProductDescription';
+import ProductSection from './components/ProductSection/productsection';
 
 function App() {
   return (
@@ -21,9 +24,12 @@ function App() {
       {/* <HomePageScreen /> */}
       {/* <AboutScreen /> */}
       {/* <CollectionScreen /> */}
-      <AuctionScreen />
+      {/* <AuctionScreen />
       <FavouriteScreen />
-      <IndividualCollectionScreen />
+  <IndividualCollectionScreen /> */}
+       <ProductScreen />
+      {/* <ProductDesc/> */}
+      {/* <ProductSection/> */}
     </div>
   );
 }
