@@ -2,56 +2,10 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .product_page_header {
     height: 10%;
     padding-bottom: 0vh;
-}
-
-.content {
-    /* display: flex; */
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    margin-top: -2%;
-    margin-left: 5%;
-}
-
-.title {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 61px;
-    /* font-family: 'Irish Grover'; */
-    /* font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
-    color: rgba(131, 95, 42, 0.64); */                    
-}
-
-.description {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    margin-right: 65%;
-    text-align: justify;
-    margin-bottom: 2%;
-}
-
-.collection{
-    font-weight: bold;
-    margin-bottom: 0.5%;
-}
-
-.description2{
-    margin-top: 0.5%;
-    margin-bottom: 2%;
-}
-
-.button{
-    margin-bottom: 2%;
 }

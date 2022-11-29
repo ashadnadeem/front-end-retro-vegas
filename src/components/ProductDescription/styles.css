@@ -1,24 +1,19 @@
-.page {
+.desc_page {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.header {
-    height: 10%;
-    padding-bottom: 0vh;
-}
-
-.content {
+.desc_content {
     /* display: flex; */
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    margin-top: -2%;
+    margin-top: 2%;
     margin-left: 5%;
 }
 
-.title {
+.desc_title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -32,7 +27,7 @@
     color: rgba(131, 95, 42, 0.64); */                    
 }
 
-.description {
+.desc_description {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -42,20 +37,20 @@
     margin-bottom: 2%;
 }
 
-.collection{
+.desc_collection{
     font-weight: bold;
     margin-bottom: 0.5%;
 }
 
-.description2{
+.desc_description2{
     margin-top: 0.5%;
     margin-bottom: 2%;
 }
 
-.button{
+.desc_button{
     margin-bottom: 2%;
 }
 
-.price{
+.desc_price{
     font-weight: bold;
 }

@@ -15,15 +15,15 @@ const ProductSection: FC = () => {
     return (
         <>
             {/* <div className="page"> */}
-            <div className="content">
-                <div className="content2">
-                    <text className="text"> Mark as Favourite </text> <span></span>
+            <div className="section_content">
+                <div className="section_content2">
+                    <text className="section_text"> Mark as Favourite </text> <span></span>
                     <FavButton isFav={isFav} onPress={() => { setIsFav(!isFav) }} />
                 </div>
-                <div>
-                    <img className="image" src={require('../../assets/productImage.png')} />
+                 <div>
+                    <img className="section_image" src={require('../../assets/productImage.png')} />
                 </div>
-                <div className="text2">
+                <div className="section_text2">
                     Seller: Ashad Nadeem
                 </div>
             </div>
