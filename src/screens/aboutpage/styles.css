@@ -2,25 +2,23 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .about_page_header{
     height: 10%;
-    padding-bottom: 20vh;
+    padding-bottom: 0vh;
 }
 .about_page_content{
-    height: 80%;
-    width: 100%;
-    margin-top: -35vh;
+    margin-top: -10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10%;
+    margin: 0% 10%;
 }
 
 .about_page_greet_text{
-    width: 40%;
+    width: 50%;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -36,12 +34,13 @@
 .about_page_description{
     display: flex;
     flex-direction: column;
-    width: 55%;
+    justify-content: center;
+    width: 50%;
     gap: 20px;
 }
 
 .about_page_para{
-    width: 60%;
+    width: 80%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
