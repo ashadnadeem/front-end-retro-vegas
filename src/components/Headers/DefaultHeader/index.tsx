@@ -2,6 +2,7 @@ import { Person, ShoppingCart } from "@mui/icons-material";
 import { Button as h1, IconButton } from "@mui/material";
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCategories } from "../../../api_calls/category";
 
 import "./styles.css";
 
@@ -12,7 +13,12 @@ type Props = {
 const DefaultHeader: FC<Props> = ({inverted}) => {
     const navigate = useNavigate();
     const navigateToAboutPage = () => navigate('/about');
-    const navigateToCollectionPage = () => navigate('/collection');
+    const navigateToCollectionPage = async() => {
+        // API CALL TO GET COLLECTIONS
+        await getCategories();
+        console.log("categories fetched :)");
+        navigate('/collection');
+    };
     const navigateToAuctionPage = () => navigate('/auction');
     const navigateToFavouritePage = () => navigate('/favourite');
     const onSellItemClick = () => {
