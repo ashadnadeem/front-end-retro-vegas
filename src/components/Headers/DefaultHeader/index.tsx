@@ -20,7 +20,7 @@ const DefaultHeader: FC<Props> = ({inverted}) => {
     }
     return(
         <div className={inverted?"default_header_bg_invert":"default_header_bg"}>
-            <label className={inverted?"default_header_logo_invert":"default_header_logo"}>Logo</label>
+            <label className={inverted?"default_header_logo_invert":"default_header_logo"}>RetroV</label>
             <div className={inverted?"default_header_menu_invert":"default_header_menu"}>
                 {/* Maerial UI default_header_text */}
                 <h1 className={inverted?"default_header_text_invert":"default_header_text"} color="inherit" onClick={navigateToAboutPage}>About</h1>

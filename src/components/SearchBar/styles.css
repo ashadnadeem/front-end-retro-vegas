@@ -3,8 +3,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
-    line-height: 31px;
+    font-size: 18px;
+    line-height: 20px;
     display: flex;
     align-items: center;
 
@@ -18,14 +18,21 @@
 .searchbar_group{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
     width: 60%;
-    height: 55px;
 }
 
 .searchbar_icon {
-    width: 45px;
-    height: 35px;
-    padding: 10px;
-    background-color: black;
+    width: 35px;
+    height: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.searchbar_icon_bg {
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    cursor: pointer;
 }
