@@ -8,6 +8,11 @@ type Props = {
 }
 
 const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
+
+    const onPress = () => {
+
+    }
+
     return (
         <div className="searchbar_group">
             <input
@@ -17,7 +22,10 @@ const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
                 onChange={e => setText(e.target.value)}
             />
             {/* search icon */}
-            <img className="searchbar_icon" src={require("../../assets/icons/search.png")} />
+            <button className="searchbar_icon_bg" onClick={onPress}>
+                <img className="searchbar_icon" src={require("../../assets/icons/search.png")} />
+            </button>
+
         </div>
     );
 }
