@@ -4,7 +4,7 @@
 }
 .product_card_inner{
     width: 80%;
-    padding: 1%;
+    padding: 2%;
     display: flex;
     flex-direction: column;
     border: 4px solid rgba(131, 95, 42, 0.62);

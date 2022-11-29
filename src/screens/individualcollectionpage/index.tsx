@@ -1,4 +1,5 @@
 import React, { FC} from "react"
+import { useLocation} from "react-router-dom";
 import BackButton from "../../components/Buttons/BackButton";
 import FilterButton from "../../components/Buttons/FilterButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
@@ -8,10 +9,12 @@ import SearchBar from "../../components/SearchBar";
 import './styles.css';
 
 type Props = {
-    category_id: string;
+    
 };
 
-const IndividualCollectionScreen: FC<Props> = ({category_id}) => {
+const IndividualCollectionScreen: FC<Props> = ({}) => {
+    const { state } = useLocation();
+    console.log(state);
     //ApI call to get the products from the category id
     const item: Object = {
         "name": "Dagger",
@@ -26,7 +29,7 @@ const IndividualCollectionScreen: FC<Props> = ({category_id}) => {
                 </div>
                 <div className="ind_colletion_page_content">
                     <div className="ind_colletion_page_back_icon">
-                        <BackButton onPress={()=>{console.log("Back button pressed")}}/>
+                        <BackButton />
                     </div>
                     <div className="ind_colletion_page_title_header">
                         <div className="ind_colletion_page_title_text_group">

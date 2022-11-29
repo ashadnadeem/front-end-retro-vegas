@@ -12,7 +12,7 @@ const AdminCustomersScreen: FC = () => {
             <div className="page">
                 <AdminHeader/>
                 <div className="content">
-                    <BackButton onPress={function (): void {} }/>
+                    <BackButton />
                     <div className="customer-data">
                         <PageHeader text={"Customers"}/>
                         <AdminCustomerContainer/>

@@ -1,4 +1,5 @@
 import React, { FC} from "react"
+import { useNavigate } from "react-router-dom";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import ProductCard from "../../components/Cards/ProductCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
@@ -6,6 +7,8 @@ import SearchBar from "../../components/SearchBar";
 import './styles.css';
 
 const AuctionScreen: FC = () => {
+    const navigate = useNavigate();
+    const navigateToMyBids = () => navigate('/mybids');
     const item: Object = {
         "name": "Dagger",
         "image": "https://images.unsplash.com/photo-1588597574944-5e581eeef359?ixlib=rb-4.0.3&dl=igor-bispo-78MIXkDUs3E-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb"
@@ -21,7 +24,7 @@ const AuctionScreen: FC = () => {
                     <div className="auction_page_title_header">
                         <div></div>
                         <h1 className="auction_page_title">Auction</h1>
-                        <RectangleArrowButton invert text="My Bids" onPress={function (): void {}}/>
+                        <RectangleArrowButton invert text="My Bids" onPress={navigateToMyBids}/>
                     </div>
                     <h1 className="auction_page_sub_title">Following Products are up on auction. Bid on your favourite products today to enhance your collection.</h1>
                     <div className="auction_page_gallery">

@@ -40,7 +40,7 @@ const CustomerProfileScreen: FC = () => {
             <div className="page">
                 <AdminHeader/>
                 <div className="content">
-                    <BackButton onPress={function (): void {} }/>
+                    <BackButton />
                     <div className="profile-data">
                         <PageHeader text={"Profile"}/>
 
