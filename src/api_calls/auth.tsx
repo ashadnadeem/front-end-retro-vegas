@@ -1,7 +1,8 @@
 import axios from "axios";
+import BaseURL from "./url";
 
 export const loginCall = async (email: String, password: String) => {
-    const response = await axios.post('http://localhost:5000/auth/login', {
+    const response = await axios.post(`${BaseURL}/auth/login`, {
         email: email,
         password: password
     });
@@ -16,7 +17,7 @@ export const loginCall = async (email: String, password: String) => {
 }
 
 export const registerCall = async (email: String, password: String, name: String, phoneNo: String) => {
-    const response = await axios.post('http://localhost:5000/auth/register', {
+    const response = await axios.post( `${BaseURL}/auth/register`, {
         email: email,
         password: password,
         name: name,
