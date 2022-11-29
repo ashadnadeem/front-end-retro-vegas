@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import {RectangleArrowButton} from "../../Buttons/RectangleButton";
 import GroupSocialButons from "../../Buttons/SocialButtons";
 import OrSeperator from "../../Seperators/OrSeperator";
@@ -7,6 +7,8 @@ import PageHeader from "../../Text/PageHeader";
 import TextLink from "../../Text/TextLink";
 import InputField from "../../TextFields";
 import "./styles.css";
+import {registerCall} from "../../../api_calls/auth";
+import { Alert, Snackbar } from "@mui/material";
 
 type Props = {
 }
@@ -16,6 +18,8 @@ const RegisterForm: FC<Props> = ({}) => {
     const [email, setEmail] = React.useState("");
     const [phoneNum, setPhoneNum] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [response, setResponse] = React.useState("");
+    const navigate = useNavigate();
 
     
     //Social Login function
@@ -23,19 +27,26 @@ const RegisterForm: FC<Props> = ({}) => {
         console.log("Social Login coming soon");
     }
 
-    const register = () => {
-        axios.post('http://localhost:5000/auth/register', {
-            email: email,
-            password: password,
-            name: name,
-            phoneNo: phoneNum
-        }).then((response) => {
-          console.log(response.data);
-        });
+    const register = async () => {
+        const response = await registerCall(email, password, name, phoneNum);
+        if (response != "") {
+            setEmail("");
+            setPassword("");
+            setName("");
+            setPhoneNum("");
+            setResponse(response);
+        } else {
+            navigate('/');
+        }
     }
     
     return(
         <div className="register_form_group">
+            <Snackbar open={response != ''} autoHideDuration={6000}>
+                <Alert severity="error" sx={{ width: "100%" }}>
+                {response}
+                </Alert>
+            </Snackbar>
             <PageHeader text="Register" />
             <div className="register_form_textfields">
                 <InputField title="Name" placeHolder="" text={name} setText={setName} />
@@ -45,7 +56,7 @@ const RegisterForm: FC<Props> = ({}) => {
             </div>
             <br></br>
             <RectangleArrowButton text="Register" onPress={register} />
-            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {console.log("login page")}} />
+            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {navigate('/register');}} />
             <OrSeperator />
             <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
         </div>

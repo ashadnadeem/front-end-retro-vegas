@@ -1,49 +1,80 @@
-import axios from "axios";
 import React, { FC } from "react";
-import {RectangleArrowButton} from "../../Buttons/RectangleButton";
+import { RectangleArrowButton } from "../../Buttons/RectangleButton";
 import GroupSocialButons from "../../Buttons/SocialButtons";
 import OrSeperator from "../../Seperators/OrSeperator";
 import PageHeader from "../../Text/PageHeader";
 import TextLink from "../../Text/TextLink";
 import InputField from "../../TextFields";
+import { loginCall } from "../../../api_calls/auth";
 
 import "./styles.css";
-type Props = {
-}
+import { Alert, Snackbar } from "@mui/material";
+import {useNavigate} from 'react-router-dom';
+type Props = {};
 
 const LoginForm: FC<Props> = ({}) => {
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    
-    //Social Login function
-    const socialLogin = () => {
-        console.log("Social Login coming soon");
-    }
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [response, setResponse] = React.useState("");
+  const navigate = useNavigate();
 
-    const login = () => {
-        axios.post('http://localhost:5000/auth/login', {
-            email: email,
-            password: password
-        }).then((response) => {
-            localStorage.setItem('accessToken', JSON.stringify(response.data.accessToken));
-            localStorage.setItem('user', JSON.stringify(response.data.user));
-        });
+  //Social Login function
+  const socialLogin = () => {
+    console.log("Social Login coming soon");
+  };
+
+  const login = async () => {
+    const response = await loginCall(email, password);
+    if (response != "") {
+      setEmail("");
+      setPassword("");
+      setResponse(response);
+    } else {
+      navigate('/');
     }
-    
-    return(
-        <div className="login_form_group">
-            <PageHeader text="Sign In" />
-            <div className="login_form_textfields">
-                <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
-                <br></br>
-                <InputField title="Password" placeHolder="" text={password} type= 'password' setText={setPassword} />
-            </div>
-            <RectangleArrowButton text="Sign In" onPress={login} />
-            <TextLink text="Don't have an account? " hyperText="Sign up" onClick={() => {console.log("login page")}} />
-            <OrSeperator />
-            <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
-        </div>
-    );
-}
+  };
+
+  return (
+    <div className="login_form_group">
+        <Snackbar open={response != ''} autoHideDuration={6000}>
+            <Alert severity="error" sx={{ width: "100%" }}>
+            {response}
+            </Alert>
+        </Snackbar>
+      <PageHeader text="Sign In" />
+      <div className="login_form_textfields">
+        <InputField
+          title="Email"
+          placeHolder=""
+          text={email}
+          setText={setEmail}
+        />
+        <br></br>
+        <InputField
+          title="Password"
+          placeHolder=""
+          text={password}
+          type="password"
+          setText={setPassword}
+        />
+      </div>
+      <RectangleArrowButton text="Sign In" onPress={login} />
+      <TextLink
+        text="Don't have an account? "
+        hyperText="Sign up"
+        onClick={() => {
+          navigate('/register');
+        }}
+      />
+      <OrSeperator />
+      <GroupSocialButons
+        text="Sign in with"
+        google={socialLogin}
+        facebook={socialLogin}
+        instagram={socialLogin}
+      />
+    </div>
+  );
+};
 
 export default LoginForm;
