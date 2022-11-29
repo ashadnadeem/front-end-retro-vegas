@@ -21,9 +21,9 @@ const MyBidsScreen: FC = () => {
                     <h1 className="mybid_page_title">My Bids</h1>
                     <div className="mybid_page_gallery">
                         {/* map for 3 items */}
-                        {items.map((item, index, key) => {
+                        {items.map((item, index) => {
                             return (
-                                <ProductCard index={index} title={item['name']} image={item['image']}/>
+                                <ProductCard key={index} index={index} title={item['name']} image={item['image']}/>
                             );
                         })}
                     </div>

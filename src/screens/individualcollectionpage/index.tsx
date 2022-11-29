@@ -14,7 +14,6 @@ type Props = {
 
 const IndividualCollectionScreen: FC<Props> = ({}) => {
     const { state } = useLocation();
-    console.log(state);
     //ApI call to get the products from the category id
     const item: Object = {
         "name": "Dagger",
@@ -35,7 +34,7 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                         <div className="ind_colletion_page_title_text_group">
                             <h1 className="ind_colletion_page_title">Collection</h1> 
                             <h1 className="ind_colletion_page_mini_title">{"-"}</h1>
-                            <h1 className="ind_colletion_page_mini_title">{"watches"}</h1>
+                            <h1 className="ind_colletion_page_mini_title">{state.col_name}</h1>
                         </div>
                         <div className="ind_colletion_page_filter_button">
                             <FilterButton onPress={()=>{console.log("Filter button pressed")}}/>
@@ -43,9 +42,9 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                     </div>
                     <div className="ind_colletion_page_gallery">
                         {/* map for 6 items */}
-                        {items.map((item, index, key) => {
+                        {items.map((item, index) => {
                             return (
-                                <ProductCard index={index} title={item['name']} image={item['image']}/>
+                                <ProductCard key={index} index={index} title={item['name']} image={item['image']}/>
                             );
                         })}
                     </div>

@@ -7,3 +7,7 @@
     color: #6D5229;
     cursor: pointer;
 }
+.hyperText:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}

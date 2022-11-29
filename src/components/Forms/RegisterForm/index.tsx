@@ -56,7 +56,7 @@ const RegisterForm: FC<Props> = ({}) => {
             </div>
             <br></br>
             <RectangleArrowButton text="Register" onPress={register} />
-            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {navigate('/register');}} />
+            <TextLink text="Already have an account? " hyperText="Login" onClick={() => {navigate('/login');}} />
             <OrSeperator />
             <GroupSocialButons text="Sign in with" google={socialLogin} facebook={socialLogin} instagram={socialLogin} />       
         </div>

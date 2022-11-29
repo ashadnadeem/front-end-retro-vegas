@@ -1,23 +1,18 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { Category } from "../../../models/category_model";
 import "./styles.css";
 
-type Props = {
-    index: number;
-    title: string;
-    image: string;
-}
 
-const CollectionCard: FC<Props> = ({index, title, image }) => {
+const CollectionCard: FC<Category> = (cat) => {
     const navigate = useNavigate();
     const showCollectionInfo = () => {
-        console.log("show collection info");
-        navigate("/individualcollection", { state: {collection_id: index } });
+        navigate("/individualcollection", { state: {col_id: cat._id, col_name:cat.name } });
     };
     return(
         <div className="collection_card_group" onClick={showCollectionInfo}>
-            <img className="collection_card_image" src={image}/>
-            <h1 className="collection_card_text">{title}</h1>
+            <img className="collection_card_image" src={cat.imageUrl}/>
+            <h1 className="collection_card_text">{cat.name}</h1>
         </div>
     );
 }

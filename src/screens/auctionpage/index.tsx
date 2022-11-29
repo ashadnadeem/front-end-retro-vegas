@@ -29,9 +29,9 @@ const AuctionScreen: FC = () => {
                     <h1 className="auction_page_sub_title">Following Products are up on auction. Bid on your favourite products today to enhance your collection.</h1>
                     <div className="auction_page_gallery">
                         {/* map for 3 items */}
-                        {items.map((item, index, key) => {
+                        {items.map((item, index) => {
                             return (
-                                <ProductCard index={index} title={item['name']} image={item['image']}/>
+                                <ProductCard key={index} index={index} title={item['name']} image={item['image']}/>
                             );
                         })}
                     </div>

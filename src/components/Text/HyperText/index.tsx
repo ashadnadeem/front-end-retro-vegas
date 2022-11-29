@@ -10,8 +10,8 @@ type Props = {
 
 const HyperText: FC<Props> = ({ text, onClick }) => {
     return(
-        <div>
-            <label className="hyperText" onClick={onClick}>{text}</label>
+        <div className="hyperText">
+            <label onClick={onClick}>{text}</label>
         </div>
     );
 }

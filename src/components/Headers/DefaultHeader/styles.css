@@ -21,16 +21,25 @@
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 36px;
+}
+.default_header_logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .default_header_logo_invert {
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
-    line-height: 36px;
+    font-size: 36px;
     color: #E7DCCA;
+}
+.default_header_logo_invert:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .default_header_text {
@@ -115,4 +124,12 @@
     gap: 20px;
     align-items: center;
     color: #E7DCCA;
+}
+.default_header_icon {
+    color: #000000;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.default_header_icon:hover {
+    transform: scale(1.2);
 }

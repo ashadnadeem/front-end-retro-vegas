@@ -18,9 +18,9 @@ const CollectionScreen: FC = () => {
                     <h1 className="collection_page_title">Collections</h1>
                     <div className="collection_page_gallery">
                         {/* map for 6 items */}
-                        {categories.map((item, index, key) => {
+                        {categories.map((item, index) => {
                             return (
-                                <CollectionCard index={index} title={item.name} image={item.imageUrl}/>
+                                <CollectionCard key={index} _id={item["_id"]} name={item.name} imageUrl={item.imageUrl} parentID={item.parentID} />
                             );
                         })}
                     </div>
