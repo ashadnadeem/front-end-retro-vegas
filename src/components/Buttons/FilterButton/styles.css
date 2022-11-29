@@ -1,4 +1,4 @@
-.filterbuttongroup {
+.filter_button_group {
     height: 45px;
     width: 100%;
     display: flex;
@@ -11,12 +11,12 @@
     border: 0px;
     filter: blur(0.5px);
 }
-.filterbuttongroup:hover {
+.filter_button_group:hover {
     filter: blur(0px);
     transform: scale(1.1);
 }
 
-.buttonicon{
+.filter_button_icon{
     width: 36px;
     height: 36px;
     margin-left: -15%;
@@ -25,7 +25,7 @@
     transition: all 0.3s ease;
 }
 
-.buttontext{
+.filter_button_text{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;

@@ -3,7 +3,7 @@ import "./styles.css";
 
 const Sidebar:FC = () => {
     return (
-        <img className="sidebar" src={require('../../../assets/Sidebar.png')} />
+        <img className="images_sidebar" src={require('../../../assets/Sidebar.png')} />
     );
 }
 

@@ -13,13 +13,13 @@ const MyBidsScreen: FC = () => {
     const items: Object[] = [item, item, item];
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="mybid_page_group">
+                <div className="mybid_page_header">
                     <DefaultHeader inverted={true}/>
                 </div>
-                <div className="content">
-                    <h1 className="title">My Bids</h1>
-                    <div className="gallery">
+                <div className="mybid_page_content">
+                    <h1 className="mybid_page_title">My Bids</h1>
+                    <div className="mybid_page_gallery">
                         {/* map for 3 items */}
                         {items.map((item, index, key) => {
                             return (

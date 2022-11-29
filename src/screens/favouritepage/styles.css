@@ -1,19 +1,19 @@
-.page {
+.favourite_page_group {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.header{
+.favourite_page_header{
     height: 10vh;
 }
-.content{
+.favourite_page_content{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.title{
+.favourite_page_title{
     display: flex;
     font-family: 'Irish Grover';
     font-style: normal;
@@ -22,7 +22,7 @@
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     color: rgba(131, 95, 42, 0.64);
 }
-.gallery{
+.favourite_page_gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;

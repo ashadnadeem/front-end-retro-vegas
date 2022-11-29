@@ -35,9 +35,9 @@ const RegisterForm: FC<Props> = ({}) => {
     }
     
     return(
-        <div className="register_form">
+        <div className="register_form_group">
             <PageHeader text="Register" />
-            <div className="form">
+            <div className="register_form_textfields">
                 <InputField title="Name" placeHolder="" text={name} setText={setName} />
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
                 <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />

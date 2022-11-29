@@ -7,10 +7,10 @@ type Props = {
 
 const OrSeperator: FC<Props> = ({}) => {
     return(
-        <div className="OrSeperator" >
-            <div className="line"/>
-            <p className="or-text">OR</p>
-            <div className="line"/>
+        <div className="seperator_or" >
+            <div className="seperator_line"/>
+            <p className="seperator_or_text">OR</p>
+            <div className="seperator_line"/>
         </div>
     );
 }

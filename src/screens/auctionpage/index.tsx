@@ -13,18 +13,18 @@ const AuctionScreen: FC = () => {
     const items: Object[] = [item, item, item];
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="auction_page_group">
+                <div className="auction_page_header">
                     <DefaultHeader inverted={true}/>
                 </div>
-                <div className="content">
-                    <div className="title_header">
+                <div className="auction_page_content">
+                    <div className="auction_page_title_header">
                         <div></div>
-                        <h1 className="title">Auction</h1>
+                        <h1 className="auction_page_title">Auction</h1>
                         <RectangleArrowButton invert text="My Bids" onPress={function (): void {}}/>
                     </div>
-                    <h1 className="sub_title">Following Products are up on auction. Bid on your favourite products today to enhance your collection.</h1>
-                    <div className="gallery">
+                    <h1 className="auction_page_sub_title">Following Products are up on auction. Bid on your favourite products today to enhance your collection.</h1>
+                    <div className="auction_page_gallery">
                         {/* map for 3 items */}
                         {items.map((item, index, key) => {
                             return (

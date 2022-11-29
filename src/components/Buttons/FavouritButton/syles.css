@@ -1,4 +1,4 @@
-.fav {
+.fav_button_icon {
     scale: 1.2;
     padding: 10px;
     cursor: pointer;
@@ -6,17 +6,17 @@
     color: rgba(131, 95, 48, 1);
 }
 
-.fav:hover {
+.fav_button_icon:hover {
     color: rgba(211, 187, 152, 0.5);
 }
 
-.unfav{
+.unfav_button_icon{
     scale: 1.2;
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     color: rgba(131, 95, 48, 0.2);
 }
-.unfav:hover {
+.unfav_button_icon:hover {
     color: rgba(131, 95, 48, 0.5);
 }

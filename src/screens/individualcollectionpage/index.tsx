@@ -20,25 +20,25 @@ const IndividualCollectionScreen: FC<Props> = ({category_id}) => {
     const items: Object[] = [item, item, item, item, item, item];
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="ind_collection_page_group">
+                <div className="ind_colletion_page_header">
                     <DefaultHeader inverted={true}/>
                 </div>
-                <div className="content">
-                    <div className="back_icon">
+                <div className="ind_colletion_page_content">
+                    <div className="ind_colletion_page_back_icon">
                         <BackButton onPress={()=>{console.log("Back button pressed")}}/>
                     </div>
-                    <div className="title_header">
-                        <div className="title_text_group">
-                            <h1 className="title">Collection</h1> 
-                            <h1 className="mini_title">{"-"}</h1>
-                            <h1 className="mini_title">{"watches"}</h1>
+                    <div className="ind_colletion_page_title_header">
+                        <div className="ind_colletion_page_title_text_group">
+                            <h1 className="ind_colletion_page_title">Collection</h1> 
+                            <h1 className="ind_colletion_page_mini_title">{"-"}</h1>
+                            <h1 className="ind_colletion_page_mini_title">{"watches"}</h1>
                         </div>
-                        <div className="filter_button">
+                        <div className="ind_colletion_page_filter_button">
                             <FilterButton onPress={()=>{console.log("Filter button pressed")}}/>
                         </div>
                     </div>
-                    <div className="gallery">
+                    <div className="ind_colletion_page_gallery">
                         {/* map for 6 items */}
                         {items.map((item, index, key) => {
                             return (

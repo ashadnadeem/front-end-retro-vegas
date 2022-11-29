@@ -1,13 +1,13 @@
-.page {
+.collection_page_group {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
-.header{
+.collection_page_header{
     height: 10%;
     padding-bottom: 0vh;
 }
-.content{
+.collection_page_content{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +15,7 @@
     margin-top: -2%;
 }
 
-.title{
+.collection_page_title{
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -24,7 +24,7 @@
     color: rgba(131, 95, 42, 0.64);
 }
 
-.gallery{
+.collection_page_gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;

@@ -31,9 +31,9 @@ const LoginForm: FC<Props> = ({}) => {
     }
     
     return(
-        <div className="login_form">
+        <div className="login_form_group">
             <PageHeader text="Sign In" />
-            <div className="form">
+            <div className="login_form_textfields">
                 <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
                 <br></br>
                 <InputField title="Password" placeHolder="" text={password} type= 'password' setText={setPassword} />

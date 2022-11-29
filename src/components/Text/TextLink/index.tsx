@@ -12,8 +12,8 @@ type Props = {
 
 const TextLink: FC<Props> = ({ text, hyperText, onClick }) => {
     return(
-        <div className="textgroup">
-            <label className="text">{text}</label>
+        <div className="textlink_group">
+            <label className="textlink_text">{text}</label>
             <HyperText text={hyperText} onClick={onClick}/>
         </div>
     );

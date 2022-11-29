@@ -9,15 +9,15 @@ type Props = {
 
 const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
     return (
-        <div className="searchbar">
+        <div className="searchbar_group">
             <input
-                className="input"
+                className="searchbar_input"
                 placeholder={placeHolder}
                 value={text}
                 onChange={e => setText(e.target.value)}
             />
             {/* search icon */}
-            <img className="searchicon" src={require("../../assets/icons/search.png")} />
+            <img className="searchbar_icon" src={require("../../assets/icons/search.png")} />
         </div>
     );
 }

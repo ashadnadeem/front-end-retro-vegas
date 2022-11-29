@@ -8,16 +8,16 @@ const HomePageScreen: FC = () => {
     const [searchText, setSearchText] = React.useState("");
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="home_page_group">
+                <div className="home_page_header">
                     <DefaultHeader inverted={false}/>
                 </div>
-                <div className="content">
-                    <div className="greet">
-                        <h1 className="greet_text">Hello,</h1>
-                        <h1 className="greet_text" style={{'paddingLeft':'100px'}}>Khaulah!</h1>
+                <div className="home_page_content">
+                    <div className="home_page_greet_group">
+                        <h1 className="home_page_greet_text">Hello,</h1>
+                        <h1 className="home_page_greet_text" style={{'paddingLeft':'100px'}}>Khaulah!</h1>
                     </div>
-                    <h1 className="title">Buy your favourite antique items.</h1>
+                    <h1 className="home_page_title">Buy your favourite antique items.</h1>
                     <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
                     <RectangleArrowButton text="Check Collection" onPress={() => {}} />
                 </div>

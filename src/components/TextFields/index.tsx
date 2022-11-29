@@ -12,9 +12,9 @@ type Props = {
 const InputField: FC<Props> = ({ title, placeHolder, type, text, setText }) => {
     return (
         <div>
-            <label className="title">{title}</label>
+            <label className="textfield_title">{title}</label>
             <input
-                className="input"
+                className="textfield_input"
                 placeholder={placeHolder}
                 value = {text}
                 type = {type || 'text'}

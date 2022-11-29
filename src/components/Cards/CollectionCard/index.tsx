@@ -10,9 +10,9 @@ type Props = {
 
 const CollectionCard: FC<Props> = ({index, title, image }) => {
     return(
-        <div className="item">
-            <img className="item_image" src={image}/>
-            <h1 className="item_title">{title +" "+ index}</h1>
+        <div className="collection_card_group">
+            <img className="collection_card_image" src={image}/>
+            <h1 className="collection_card_text">{title +" "+ index}</h1>
         </div>
     );
 }

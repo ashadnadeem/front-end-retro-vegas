@@ -1,5 +1,5 @@
 
-.input{
+.textfield_input{
     flex-direction: column;
     background-color: #835F2A40;
     color: #000;
@@ -12,7 +12,7 @@
     padding-right: 5px;
 }
 
-.title{
+.textfield_title{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;

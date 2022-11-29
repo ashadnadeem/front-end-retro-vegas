@@ -1,5 +1,5 @@
 
-.input{
+.searchbar_input{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -15,7 +15,7 @@
     border: none;
 }
 
-.searchbar{
+.searchbar_group{
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -23,7 +23,7 @@
     height: 55px;
 }
 
-.searchicon{
+.searchbar_icon {
     width: 45px;
     height: 35px;
     padding: 10px;

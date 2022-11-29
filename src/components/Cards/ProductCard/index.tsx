@@ -13,21 +13,21 @@ type Props = {
 const ProductCard: FC<Props> = ({index, title, image }) => {
     const [isFav, setIsFav] = useState(false);
     return(
-        <div className="group">
-            <div className="card">
-                <img className="image" src={image}/>
-                <div className="body">
-                    <div className="top_body">
-                        <div className="body_text">
-                            <h1 className="produc_title">{title}</h1>
-                            <h1 className="product_owner">{"by " + "Ashad Nadeem"}</h1>
+        <div className="product_card_group">
+            <div className="product_card_inner">
+                <img className="product_card_image" src={image}/>
+                <div className="product_card_body">
+                    <div className="product_card_top_body">
+                        <div className="product_card_body_text">
+                            <h1 className="product_card_body_text_title">{title}</h1>
+                            <h1 className="product_card_body_text_owner">{"by " + "Ashad Nadeem"}</h1>
                         </div>
                         <FavButton isFav={isFav} onPress={()=>{setIsFav(!isFav)}}/>
                     </div>
-                    <h1 className="product_price">{"$ " + "9.99"}</h1>
+                    <h1 className="product_card_body_text_price">{"$ " + "9.99"}</h1>
                 </div>
             </div>
-            <div className="button">
+            <div className="product_card_view_button">
                 <RectangleButton text={"View"} onPress={function (): void {}}/>
             </div>
         </div>

@@ -9,9 +9,9 @@ type Props = {
 
 const FilterButton: FC<Props> = ({ onPress }) => {
     return(
-        <button className={"filterbuttongroup"} onClick={onPress}>
-            <FilterAlt className="buttonicon" />
-            <label className={"buttontext"}>{"Filter"}</label>
+        <button className={"filter_button_group"} onClick={onPress}>
+            <FilterAlt className="filter_button_icon" />
+            <label className={"filter_button_text"}>{"Filter"}</label>
         </button>
     );
 }

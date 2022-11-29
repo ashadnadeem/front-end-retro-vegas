@@ -1,15 +1,15 @@
-.page {
+.home_page_group {
     height: 100vh;
     background-image:url(../../assets/background.png);
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
 }
-.header{
+.home_page_header{
     height: 10%;
     padding-bottom: 20vh;
 }
-.content{
+.home_page_content{
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -19,14 +19,14 @@
     gap: 45px;
 }
 
-.greet{
+.home_page_greet_group{
     display: flex;
     flex-direction: column;
     justify-content: start;
     margin-bottom: -5%;
 }
 
-.greet_text{
+.home_page_greet_text{
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;

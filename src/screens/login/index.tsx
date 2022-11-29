@@ -7,7 +7,7 @@ import './styles.css';
 const LoginScreen: FC = () => {
     return (
         <>
-            <div className="page">
+            <div className="login_page">
                 <Sidebar />
                 <LoginForm />
             </div>

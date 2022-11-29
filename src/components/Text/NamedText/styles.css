@@ -1,9 +1,9 @@
-.named-text{
+.named_text_group{
     display: flex;
     flex-direction: row;
 }
 
-.name{
+.named_text_name{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -13,7 +13,7 @@
     padding-right: 8px;
 }
 
-.value{
+.named_text_value{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;

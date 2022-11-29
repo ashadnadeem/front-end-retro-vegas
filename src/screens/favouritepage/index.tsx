@@ -13,13 +13,13 @@ const FavouriteScreen: FC = () => {
     const items: Object[] = [item, item, item];
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="favourite_page_group">
+                <div className="favourite_page_header">
                     <DefaultHeader inverted={true}/>
                 </div>
-                <div className="content">
-                    <h1 className="title">Favourite</h1>
-                    <div className="gallery">
+                <div className="favourite_page_content">
+                    <h1 className="favourite_page_title">Favourite</h1>
+                    <div className="favourite_page_gallery">
                         {/* map for 3 items */}
                         {items.map((item, index, key) => {
                             return (

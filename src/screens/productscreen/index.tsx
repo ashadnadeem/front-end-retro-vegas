@@ -11,8 +11,8 @@ import './styles.css';
 const ProductScreen: FC = () => {
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="product_page_group">
+                <div className="product_page_header">
                     <DefaultHeader inverted={true} /> </div>
                     <ProductDesc/>
                     <ProductSection/>

@@ -7,7 +7,7 @@ import './styles.css';
 const RegisterScreen: FC = () => {
     return (
         <>
-            <div className="page">
+            <div className="register_page_group">
                 <Sidebar />
                 <RegisterForm />
             </div>

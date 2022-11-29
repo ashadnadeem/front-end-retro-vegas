@@ -13,13 +13,13 @@ const CollectionScreen: FC = () => {
     const items: Object[] = [item, item, item, item, item, item];
     return (
         <>
-            <div className="page">
-                <div className="header">
+            <div className="collection_page_group">
+                <div className="collection_page_header">
                     <DefaultHeader inverted={true}/>
                 </div>
-                <div className="content">
-                    <h1 className="title">Collections</h1>
-                    <div className="gallery">
+                <div className="collection_page_content">
+                    <h1 className="collection_page_title">Collections</h1>
+                    <div className="collection_page_gallery">
                         {/* map for 6 items */}
                         {items.map((item, index, key) => {
                             return (

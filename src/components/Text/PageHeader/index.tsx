@@ -9,7 +9,7 @@ type Props = {
 
 const PageHeader: FC<Props> = ({ text }) => {
     return(
-        <label className="header">{text}</label>
+        <label className="page_header">{text}</label>
     );
 }
 

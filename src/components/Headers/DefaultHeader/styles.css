@@ -1,4 +1,4 @@
-.headerBg {
+.default_header_bg {
     height: 60%;
     align-items: center;
     display: flex;
@@ -7,7 +7,7 @@
     padding-right: 10px;
 }
 
-.headerBgInvert {
+.default_header_bg_invert {
     height: 60%;
     align-items: center;
     display: flex;
@@ -17,14 +17,14 @@
     background-color: #000000d6;
 }
 
-.logo {
+.default_header_logo {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
 }
 
-.logoInvert {
+.default_header_logo_invert {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -33,7 +33,7 @@
     color: #E7DCCA;
 }
 
-.text {
+.default_header_text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -42,11 +42,11 @@
     padding: 5px 10px;
     cursor: pointer;
 }
-.text:hover {
+.default_header_text:hover {
     transform: scale(1.1);
 }
 
-.textInvert {
+.default_header_text_invert {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -55,11 +55,11 @@
     padding: 5px 10px;
     cursor: pointer;
 }
-.textInvert:hover {
+.default_header_text_invert:hover {
     transform: scale(1.1);
 }
 
-.raised-button {
+.default_header_raised_button {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -69,11 +69,11 @@
     padding: 8px 25px;
     margin: 30px;
 }
-.raised-button:hover {
+.default_header_raised_button:hover {
     transform: scale(1.1);
 }
 
-.raised-button-invert {
+.default_header_raised_button_invert {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -86,7 +86,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
-.raised-button-invert:hover {
+.default_header_raised_button_invert:hover {
     transform: scale(1.1);
 }
 
@@ -102,14 +102,14 @@
     transform: scale(1.1);
 }
 
-.menu {
+.default_header_menu {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
 }
 
-.menuInvert {
+.default_header_menu_invert {
     display: flex;
     flex-direction: row;
     gap: 20px;

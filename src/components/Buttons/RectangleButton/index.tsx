@@ -11,17 +11,17 @@ type Props = {
 
 const RectangleArrowButton: FC<Props> = ({ text, invert, onPress }) => {
     return(
-        <button className={invert?"buttongroup_invert":"buttongroup"} onClick={onPress}>
-            <label className={invert?"buttontext_invert":"button_text"}>{text}</label>
-            <ArrowForward className="buttonicon" />
+        <button className={invert?"rectangle_button_group_invert":"rectangle_button_group"} onClick={onPress}>
+            <label className={invert?"rectangle_button_text_invert":"rectangle_button_text"}>{text}</label>
+            <ArrowForward className="rectangle_button_icon" />
         </button>
     );
 }
 
 const RectangleButton: FC<Props> = ({ text, onPress }) => {
     return(
-        <button className="buttongroup" onClick={onPress}>
-            <label className="button_text">{text}</label>
+        <button className="rectangle_button_group" onClick={onPress}>
+            <label className="rectangle_button_text">{text}</label>
         </button>
     );
 }
