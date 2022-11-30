@@ -14,37 +14,36 @@ type Props = {
 }
 
 const ProductCard: FC<Product> = (product) => {
+    console.log(product);
     const navigate = useNavigate();
     const [isFav, setIsFav] = useState(false);
-    const markfavourite= () => {
+    const markfavourite = () => {
         setIsFav(!isFav);
     };
 
-
-    const showProductInfo = async() => {
-        await getProduct(product._id);
-        console.log("products fetched :)");
-        navigate("/product", { state: {product: localStorage.getItem(product.name)}});
-
+    const showProductInfo = async () => {
+        const prod = await getProduct(product._id);
+        console.log(`product card: ${prod._id}`);
+        navigate("/product", { state: { product: prod } });
     };
 
-    return(
+    return (
         <div className="product_card_group">
             <div className="product_card_inner">
-                <img className="product_card_image" src={product.picture}/>
+                <img className="product_card_image" src={product.picture} />
                 <div className="product_card_body">
                     <div className="product_card_top_body">
                         <div className="product_card_body_text">
                             <h1 className="product_card_body_text_title">{product.name}</h1>
-                            <h1 className="product_card_body_text_owner">{"by " + "Ashad Nadeem"}</h1>
+                            <h1 className="product_card_body_text_owner">{`by " + "Ashad Nadeem`}</h1>
                         </div>
-                        <FavButton isFav={isFav} onPress={markfavourite}/>
+                        <FavButton isFav={isFav} onPress={markfavourite} />
                     </div>
                     <h1 className="product_card_body_text_price">{"$ " + product.price}</h1>
                 </div>
             </div>
             <div className="product_card_view_button">
-                <RectangleButton text={"View"} onPress={showProductInfo}/>
+                <RectangleButton text={"View"} onPress={showProductInfo} />
             </div>
         </div>
     );

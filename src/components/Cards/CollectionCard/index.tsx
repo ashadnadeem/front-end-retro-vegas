@@ -7,14 +7,15 @@ import "./styles.css";
 
 const CollectionCard: FC<Category> = (cat) => {
     const navigate = useNavigate();
-    const showCollectionInfo = async () =>  {
-        await getProductOfCategory(cat._id);
-        console.log("products fetched :)");
-        navigate('/individualcollection', {state: {col_id: cat._id, col_name: cat.name}});
-     };
-    return(
+    const showCollectionInfo = async () => {
+        console.log(`category: ${cat._id}`);
+        const prods = await getProductOfCategory(cat._id);
+        console.log(`products fetched from category: ${prods.length}`);
+        navigate('/individualcollection', { state: { category: cat, products: prods } });
+    };
+    return (
         <div className="collection_card_group" onClick={showCollectionInfo}>
-            <img className="collection_card_image" src={cat.imageUrl}/>
+            <img className="collection_card_image" src={cat.imageUrl} />
             <h1 className="collection_card_text">{cat.name}</h1>
         </div>
     );
