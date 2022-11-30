@@ -14,6 +14,8 @@ import FavouriteScreen from './screens/favouritepage';
 import IndividualCollectionScreen from './screens/individualcollectionpage';
 import ProductScreen from './screens/productscreen';
 import MyBidsScreen from './screens/mybidspage';
+import CartScreen from './screens/CartScreen';
+import CartProduct from './screens/CartProduct';
 
 function App() {
   const user = true;
@@ -32,6 +34,7 @@ function App() {
           <Route path='/favourite' element={<FavouriteScreen/>}/>
           <Route path='/mybids' element={<MyBidsScreen/>}/> */}
           <Route path='/product' element={<ProductScreen />}/>
+          <Route path='/cart' element={<CartScreen />}/>
 
           <Route path ="*" element={"404 NOT FOUND"} />
         </Routes>
