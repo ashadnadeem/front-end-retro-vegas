@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProductOfCategory } from "../../../api_calls/productsOfCategory";
+import { getProductOfCategory } from "../../../api_calls/product";
 import { Category } from "../../../models/category_model";
 import "./styles.css";
 
