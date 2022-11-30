@@ -6,6 +6,7 @@ import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import ProductCard from "../../components/Cards/ProductCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
 import SearchBar from "../../components/SearchBar";
+import { Product } from "../../models/product_model";
 import './styles.css';
 
 type Props = {
@@ -15,11 +16,9 @@ type Props = {
 const IndividualCollectionScreen: FC<Props> = ({}) => {
     const { state } = useLocation();
     //ApI call to get the products from the category id
-    const item: Object = {
-        "name": "Dagger",
-        "image": "https://images.unsplash.com/photo-1588597574944-5e581eeef359?ixlib=rb-4.0.3&dl=igor-bispo-78MIXkDUs3E-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb"
-    };
-    const items: Object[] = [item, item, item, item, item, item];
+    const product: Product[] = JSON.parse(localStorage.getItem('productsOfCategory') || '[]');
+    console.log(product.length);
+
     return (
         <>
             <div className="ind_collection_page_group">
@@ -34,7 +33,7 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                         <div className="ind_colletion_page_title_text_group">
                             <h1 className="ind_colletion_page_title">Collection</h1> 
                             <h1 className="ind_colletion_page_mini_title">{"-"}</h1>
-                            <h1 className="ind_colletion_page_mini_title">{state.col_name}</h1>
+                            <h1 className="ind_colletion_page_mini_title">{}</h1>
                         </div>
                         <div className="ind_colletion_page_filter_button">
                             <FilterButton onPress={()=>{console.log("Filter button pressed")}}/>
@@ -42,9 +41,9 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                     </div>
                     <div className="ind_colletion_page_gallery">
                         {/* map for 6 items */}
-                        {items.map((item, index) => {
+                        {product.map((item, index) => {
                             return (
-                                <ProductCard key={index} index={index} title={item['name']} image={item['image']}/>
+                                <ProductCard key={index} index={index} title={item['name']} image={item['picture']}/>
                             );
                         })}
                     </div>
