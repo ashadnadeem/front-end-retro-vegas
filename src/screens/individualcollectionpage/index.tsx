@@ -33,7 +33,7 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                         <div className="ind_colletion_page_title_text_group">
                             <h1 className="ind_colletion_page_title">Collection</h1> 
                             <h1 className="ind_colletion_page_mini_title">{"-"}</h1>
-                            <h1 className="ind_colletion_page_mini_title">{}</h1>
+                            <h1 className="ind_colletion_page_mini_title">{state.col_name}</h1>
                         </div>
                         <div className="ind_colletion_page_filter_button">
                             <FilterButton onPress={()=>{console.log("Filter button pressed")}}/>
@@ -43,7 +43,8 @@ const IndividualCollectionScreen: FC<Props> = ({}) => {
                         {/* map for 6 items */}
                         {product.map((item, index) => {
                             return (
-                                <ProductCard key={index} index={index} title={item['name']} image={item['picture']}/>
+                                <ProductCard key={index} _id={item["_id"]} name={item.name} price={item.price} picture={item.picture} storeID={item.storeID} 
+                                categoryID={item.categoryID} description={item.description} />
                             );
                         })}
                     </div>

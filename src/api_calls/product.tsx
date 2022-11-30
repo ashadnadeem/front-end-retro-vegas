@@ -8,10 +8,11 @@ export const getProduct = async (ProductID: String) => {
     };
 
     const response = await axios.get(`${BaseURL}/product/${ProductID}`, config);
-    console.log(response.data.header.error);
+    console.log(response.data.body);
     if (response.data.header.error == 0) {
-        console.log(response.data.body.product);
-        localStorage.setItem('productsOfCategory', JSON.stringify(response.data.body.product));
+        localStorage.setItem(`${response.data.body.product.name}`, JSON.stringify(response.data.body.product));
+        console.log(`${localStorage.getItem(`${response.data.body.product.name}`)}`);
+        console.log(response.data.body.product.name)
         return '';
     } else {
         return response.data.header.errorMessage;

@@ -10,7 +10,7 @@ const CollectionCard: FC<Category> = (cat) => {
     const showCollectionInfo = async () =>  {
         await getProductOfCategory(cat._id);
         console.log("products fetched :)");
-        navigate('/individualcollection');
+        navigate('/individualcollection', {state: {col_id: cat._id, col_name: cat.name}});
      };
     return(
         <div className="collection_card_group" onClick={showCollectionInfo}>
