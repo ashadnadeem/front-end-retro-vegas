@@ -22,11 +22,11 @@ const ProductScreen: FC = () => {
 
                 <ProductDesc _id={state.product.id} name={state.product.name} price={state.product.price}
                     picture={state.product.picture} storeID={state.product.storeID} categoryID={state.product.categoryID}
-                    description={state.product.description} />
+                    description={state.product.description} bids={state.product.bids} status={state.product.status} />
 
                 <ProductSection _id={state.product.id} name={state.product.name} price={state.product.price}
                     picture={state.product.picture} storeID={state.product.storeID} categoryID={state.product.categoryID}
-                    description={state.product.description} />
+                    description={state.product.description} bids={state.product.bids} status={state.product.status} />
             </div>
         </>
 
