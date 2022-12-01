@@ -1,0 +1,12 @@
+.checkout_form_textfields {
+    flex-direction: column;
+    /* width: 50%; */
+}
+
+.checkout_form_group{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+}
