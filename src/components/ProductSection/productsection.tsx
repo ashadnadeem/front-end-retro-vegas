@@ -7,8 +7,10 @@ import FavButton from "../Buttons/FavouritButton";
 import ProductCard from "../Cards/ProductCard";
 import './styles.css';
 
-
-const ProductSection: FC<Product> = (prod) => {
+type Props = {
+    prod: Product;
+};
+const ProductSection: FC<Props> = ({ prod }) => {
     const [isFav, setIsFav] = useState(false);
     return (
         <>
@@ -19,11 +21,9 @@ const ProductSection: FC<Product> = (prod) => {
                     <FavButton isFav={isFav} onPress={() => { setIsFav(!isFav) }} />
                 </div>
                 <div>
-                    <img className="section_image" src={require('../../assets/productImage.png')} />
+                    <img className="section_image" src={prod.picture} />
                 </div>
-                <div className="section_text2">
-                    Seller: Ashad Nadeem
-                </div>
+                <div className="section_text2">Seller: Ashad Nadeem</div>
             </div>
             {/* </div> */}
         </>

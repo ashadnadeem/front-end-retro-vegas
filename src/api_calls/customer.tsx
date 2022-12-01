@@ -16,3 +16,16 @@ export const getCustomer = async () => {
         return false;
     }
 }
+
+export const addToCart = async (productId: String) => {
+    // get access token from local storage
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
+    // add product to cart with customer id from backend using access token
+    const response = await axios.get(`${BaseURL}/customer/addtocart/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } });
+    // console.log(response.data.header.error);
+    if (response.data.header.error == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

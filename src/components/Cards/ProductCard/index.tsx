@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProduct } from "../../../api_calls/product";
 import { Product } from "../../../models/product_model";
@@ -14,7 +14,6 @@ type Props = {
 }
 
 const ProductCard: FC<Product> = (product) => {
-    console.log(product);
     const navigate = useNavigate();
     const [isFav, setIsFav] = useState(false);
     const markfavourite = () => {
@@ -24,9 +23,9 @@ const ProductCard: FC<Product> = (product) => {
     const showProductInfo = async () => {
         const prod = await getProduct(product._id);
         console.log(`product card: ${prod._id}`);
+        // console.log(prod);
         navigate("/product", { state: { product: prod } });
     };
-
     return (
         <div className="product_card_group">
             <div className="product_card_inner">
