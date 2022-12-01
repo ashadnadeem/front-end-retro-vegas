@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { searchProduct } from "../../api_calls/product";
 import "./styles.css";
 
 type Props = {
@@ -9,14 +10,15 @@ type Props = {
 }
 
 const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
-    const navigate = useNavigate();
-    const Navigate = () => {
-        navigate('/search',{state:{query: text}});
-    }
-    // const onPress = {
-    //     Navigate
-    // }
 
+
+    const navigate = useNavigate();
+
+    const Navigate = async () => {
+        const products = await searchProduct(text);
+        navigate('/search',{state:{searchProduct:  products}});
+    }
+   
     return (
         <div className="searchbar_group">
             <input
