@@ -28,7 +28,7 @@ const FavouriteScreen: FC = () => {
                     <DefaultHeader inverted={true} />
                 </div>
                 <div className="favourite_page_content">
-                    <h1 className="favourite_page_title">Favourite</h1>
+                    <h1 className="favourite_page_title">Favourites</h1>
                     <div className="favourite_page_gallery">
                         {products.map((item, index) => {
                             return (

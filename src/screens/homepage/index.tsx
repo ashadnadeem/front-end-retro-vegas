@@ -7,7 +7,7 @@ import './styles.css';
 
 const HomePageScreen: FC = () => {
     const [searchText, setSearchText] = React.useState("");
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('user') || '{"name": "Guest"}');
     const navigate = useNavigate();
 
     const Navigate = () => {
@@ -31,7 +31,7 @@ const HomePageScreen: FC = () => {
                     </div>
                     <h1 className="home_page_title">Buy your favourite antique items.</h1>
                     <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
-                    <RectangleArrowButton text="Check Collection" onPress={ Navigate } />
+                    <RectangleArrowButton text="Check Collection" onPress={Navigate} />
                 </div>
             </div>
         </>
