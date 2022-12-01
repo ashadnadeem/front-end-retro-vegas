@@ -8,17 +8,11 @@ import { RectangleButton } from "../../Buttons/RectangleButton";
 import "./styles.css";
 
 type Props = {
-    index: number;
-    title: string;
-    image: string;
-}
+    product: Product;
+};
 
-const ProductCard: FC<Product> = (product) => {
+const ProductCard: FC<Props> = ({ product }) => {
     const navigate = useNavigate();
-    const [isFav, setIsFav] = useState(false);
-    const markfavourite = () => {
-        setIsFav(!isFav);
-    };
 
     const showProductInfo = async () => {
         const prod = await getProduct(product._id);
@@ -36,7 +30,7 @@ const ProductCard: FC<Product> = (product) => {
                             <h1 className="product_card_body_text_title">{product.name}</h1>
                             <h1 className="product_card_body_text_owner">{`by " + "Ashad Nadeem`}</h1>
                         </div>
-                        <FavButton isFav={isFav} onPress={markfavourite} />
+                        <FavButton productID={product._id} />
                     </div>
                     <h1 className="product_card_body_text_price">{"$ " + product.price}</h1>
                 </div>

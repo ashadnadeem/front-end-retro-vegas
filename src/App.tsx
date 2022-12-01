@@ -33,9 +33,9 @@ function App() {
           <Route path="/about" element={<AboutScreen />} />
           <Route path="/collection" element={<CollectionScreen />} />
           <Route path="/individualcollection" element={<IndividualCollectionScreen />} />
-          {/* <Route path='/auction' element={<AuctionScreen/>}/>
-          <Route path='/favourite' element={<FavouriteScreen/>}/>
-          <Route path='/mybids' element={<MyBidsScreen/>}/> */}
+          <Route path='/auction' element={<AuctionScreen />} />
+          <Route path='/favourite' element={<FavouriteScreen />} />
+          <Route path='/mybids' element={<MyBidsScreen />} />
           <Route path='/product' element={<ProductScreen />} />
           <Route path='/checkout' element={<CheckoutScreen />} />
           <Route path='/payment' element={<PaymentScreen />} />

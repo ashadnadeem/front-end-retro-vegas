@@ -4,6 +4,9 @@ import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCategories } from "../../../api_calls/category";
 import { getCustomer } from "../../../api_calls/customer";
+import { getProduct } from "../../../api_calls/product";
+import { Product } from "../../../models/product_model";
+import { Customer } from "../../../models/user_model";
 
 import "./styles.css";
 
@@ -22,7 +25,9 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         navigate('/collection');
     };
     const navigateToAuctionPage = () => navigate('/auction');
-    const navigateToFavouritePage = () => navigate('/favourite');
+    const navigateToFavouritePage = async () => {
+        navigate('/favourite');
+    };
     const onSellItemClick = () => {
         console.log("Sell item clicked");
     }

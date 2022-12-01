@@ -11,14 +11,13 @@ type Props = {
     prod: Product;
 };
 const ProductSection: FC<Props> = ({ prod }) => {
-    const [isFav, setIsFav] = useState(false);
     return (
         <>
             {/* <div className="page"> */}
             <div className="section_content">
                 <div className="section_content2">
                     <text className="section_text"> Mark as Favourite </text> <span></span>
-                    <FavButton isFav={isFav} onPress={() => { setIsFav(!isFav) }} />
+                    <FavButton productID={prod._id} />
                 </div>
                 <div>
                     <img className="section_image" src={prod.picture} />
