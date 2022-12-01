@@ -3,17 +3,21 @@
     flex-direction: column;
     justify-content: center;
 }
-.favourite_page_header{
+
+.favourite_page_header {
     height: 10vh;
 }
-.favourite_page_content{
+
+.favourite_page_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5%;
+    margin-top: -3%;
 }
 
-.favourite_page_title{
+.favourite_page_title {
     display: flex;
     font-family: 'Irish Grover';
     font-style: normal;
@@ -22,10 +26,10 @@
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     color: rgba(131, 95, 42, 0.64);
 }
-.favourite_page_gallery{
+
+.favourite_page_gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     width: 90%;
 }
-

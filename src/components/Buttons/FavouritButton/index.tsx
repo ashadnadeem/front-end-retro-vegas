@@ -18,14 +18,14 @@ const FavButton: FC<Props> = ({ productID }) => {
         if (isFav == false) {
             // add to fav
             const x = await addToFav(productID);
-            if(x === 401){
+            if (x === 401) {
                 localStorage.clear();
                 navigate('/login');
             }
         } else {
             // remove from fav
             const x = await removeFromFav(productID);
-            if(x === 401){
+            if (x === 401) {
                 localStorage.clear();
                 navigate('/login');
             }
@@ -34,15 +34,21 @@ const FavButton: FC<Props> = ({ productID }) => {
     };
 
     useEffect(() => {
-        console.log("FavButton rendered");
-        // fetch customers from local storage and get wishlist
-        const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
-        const favs: String[] = customer.favs;
-        // check if product is in wishlist
-        if (favs.includes(productID)) {
-            setIsFav(true);
-        } else
+        // get access token from local storage
+        const accessToken = localStorage.getItem('accessToken') || 'guest';
+        const guest: boolean = accessToken === 'guest';
+        if (guest) {
             setIsFav(false);
+        } else {
+            // fetch customers from local storage and get wishlist
+            const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
+            const favs: String[] = customer.favs;
+            // check if product is in wishlist
+            if (favs.includes(productID)) {
+                setIsFav(true);
+            } else
+                setIsFav(false);
+        }
     }, [productID]);
     return (
         <div>

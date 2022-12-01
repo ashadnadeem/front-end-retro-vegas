@@ -3,19 +3,22 @@
     display: flex;
     flex-direction: column;
 }
-.collection_page_header{
+
+.collection_page_header {
     height: 10%;
     padding-bottom: 0vh;
 }
-.collection_page_content{
+
+.collection_page_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -2%;
+    padding-bottom: 5%;
+    margin-top: -3%;
 }
 
-.collection_page_title{
+.collection_page_title {
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -24,7 +27,7 @@
     color: rgba(131, 95, 42, 0.64);
 }
 
-.collection_page_gallery{
+.collection_page_gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;

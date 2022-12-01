@@ -3,26 +3,30 @@
     display: flex;
     flex-direction: column;
 }
-.auction_page_header{
+
+.auction_page_header {
     height: 10%;
     padding-bottom: 0vh;
 }
-.auction_page_title_header{
+
+.auction_page_title_header {
     width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.auction_page_content{
+
+.auction_page_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -2%;
+    padding-bottom: 5%;
+    margin-top: -3%;
 }
 
-.auction_page_title{
+.auction_page_title {
     display: flex;
     padding-left: 15%;
     font-family: 'Irish Grover';
@@ -32,7 +36,8 @@
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     color: rgba(131, 95, 42, 0.64);
 }
-.auction_page_sub_title{
+
+.auction_page_sub_title {
     width: 70%;
     font-family: 'Inter';
     font-style: normal;
@@ -44,10 +49,10 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
 }
-.auction_page_gallery{
+
+.auction_page_gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     width: 90%;
 }
-

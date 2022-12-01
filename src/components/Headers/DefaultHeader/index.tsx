@@ -40,7 +40,7 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
     };
     const navigateToCart = async () => {
         const x = await getCustomer();
-        if(x === 401){
+        if (x === 401) {
             localStorage.clear();
             navigate('/login');
         } else {
@@ -56,6 +56,9 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
         return customer.cart.length;
     }
+    // get access token from local storage
+    const accessToken = localStorage.getItem('accessToken') || 'guest';
+    const guest: boolean = accessToken === 'guest';
     return (
         <div className={inverted ? "default_header_bg_invert" : "default_header_bg"}>
             <label className={inverted ? "default_header_logo_invert" : "default_header_logo"} onClick={navigateToHomePage}>RetroV</label>
@@ -66,18 +69,24 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToAuctionPage}>Auctions</h1>
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToFavouritePage}>Favourites</h1>
                 <label className={inverted ? "default_header_raised_button_invert" : "default_header_raised_button"} onClick={onSellItemClick}>Sell Items</label>
-                <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large" onClick={navigateToProfile}>
-                    <Person />
-                </IconButton>
-                <div className="default_header_cart_bucket">
-                    <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>
-                        <ShoppingCart />
-                    </IconButton>
-                    <p className="default_header_cart_bucket_text">{getNumberOfItemsInCart()}</p>
-                </div>
-                <IconButton className='default_header_icon' aria-label="logout" color='inherit' size="large" onClick={logoutHandler}>
-                    <Logout />
-                </IconButton>
+                <>
+                    {guest ? <></>
+                        : <>
+                            <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large" onClick={navigateToProfile}>
+                                <Person />
+                            </IconButton>
+                            <div className="default_header_cart_bucket">
+                                <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>
+                                    <ShoppingCart />
+                                </IconButton>
+                                <p className="default_header_cart_bucket_text">{getNumberOfItemsInCart()}</p>
+                            </div>
+                            <IconButton className='default_header_icon' aria-label="logout" color='inherit' size="large" onClick={logoutHandler}>
+                                <Logout />
+                            </IconButton>
+                        </>
+                    }
+                </>
             </div>
         </div>
     );
