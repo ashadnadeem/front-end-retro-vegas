@@ -21,7 +21,7 @@
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 28px;
 }
 .default_header_logo:hover {
     cursor: pointer;
@@ -33,7 +33,7 @@
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 28px;
     color: #E7DCCA;
 }
 .default_header_logo_invert:hover {

@@ -39,9 +39,14 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         navigate('/login');
     };
     const navigateToCart = async () => {
-        await getCustomer();
-        console.log("Cart clicked");
-        navigate('/cart');
+        const x = await getCustomer();
+        if(x === 401){
+            localStorage.clear();
+            navigate('/login');
+        } else {
+            console.log("Cart clicked");
+            navigate('/cart');
+        }
     };
     const navigateToProfile = () => {
         console.log("Profile clicked");
