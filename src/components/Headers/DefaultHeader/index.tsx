@@ -32,6 +32,10 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         // navigate to login page
         navigate('/login');
     };
+    const navigateToCart = () => {
+        console.log("Cart clicked");
+        navigate('/cart');
+    };
     return (
         <div className={inverted ? "default_header_bg_invert" : "default_header_bg"}>
             <label className={inverted ? "default_header_logo_invert" : "default_header_logo"} onClick={navigateToHomePage}>RetroV</label>
@@ -45,7 +49,7 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
                 <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large">
                     <Person />
                 </IconButton>
-                <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large">
+                <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>
                     <ShoppingCart />
                 </IconButton>
                 <IconButton className='default_header_icon' aria-label="logout" color='inherit' size="large" onClick={logoutHandler}>

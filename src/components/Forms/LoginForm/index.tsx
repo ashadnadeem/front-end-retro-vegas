@@ -9,10 +9,12 @@ import { loginCall } from "../../../api_calls/auth";
 
 import "./styles.css";
 import { Alert, Snackbar } from "@mui/material";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { getCustomer } from "../../../api_calls/customer";
+import { getStore } from "../../../api_calls/store";
 type Props = {};
 
-const LoginForm: FC<Props> = ({}) => {
+const LoginForm: FC<Props> = ({ }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [response, setResponse] = React.useState("");
@@ -30,17 +32,21 @@ const LoginForm: FC<Props> = ({}) => {
       setPassword("");
       setResponse(response);
     } else {
+      // load customer data
+      await getCustomer();
+      // load store data
+      await getStore();
       navigate('/');
     }
   };
 
   return (
     <div className="login_form_group">
-        <Snackbar open={response != ''} autoHideDuration={6000}>
-            <Alert severity="error" sx={{ width: "100%" }}>
-            {response}
-            </Alert>
-        </Snackbar>
+      <Snackbar open={response != ''} autoHideDuration={6000}>
+        <Alert severity="error" sx={{ width: "100%" }}>
+          {response}
+        </Alert>
+      </Snackbar>
       <PageHeader text="Sign In" />
       <div className="login_form_textfields">
         <InputField
