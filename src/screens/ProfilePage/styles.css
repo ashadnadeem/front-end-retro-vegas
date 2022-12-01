@@ -1,0 +1,50 @@
+.profile_page_group {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.profile_page_header{
+    height: 10vh;
+}
+
+.profile_page_back_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 0%;
+    color: #231F20;
+    margin-top: -3%;
+}
+
+.profile_page_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: -3%;
+}
+
+.profile_page_data_container {
+    width: 100%;
+    align-items: center;
+}
+
+.profile_page_data_container_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 40%;
+    margin-bottom: 5%;
+}
+
+.checkout_page_button {
+    width: auto;
+    padding-top: 20px;
+    align-items: center;
+    align-self: center;
+}
+
