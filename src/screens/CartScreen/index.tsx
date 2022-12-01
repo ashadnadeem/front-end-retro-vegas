@@ -9,7 +9,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { getProduct } from "../../api_calls/product";
 import { Product } from "../../models/product_model";
 import { Customer } from "../../models/user_model";
-import { getCustomer } from "../../api_calls/customer";
 
 const CartScreen: FC = () => {
     const [cart, setCart] = useState([]);

@@ -10,6 +10,7 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 import './styles.css';
 import { removeFromCart } from "../../../api_calls/customer";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
     product: Product;
@@ -17,6 +18,7 @@ type Props = {
 };
 
 const CartProduct: FC<Props> = ({ product, updateCart }) => {
+    const navigate = useNavigate();
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {
         const category: Object = await getCategory(id);
@@ -25,8 +27,13 @@ const CartProduct: FC<Props> = ({ product, updateCart }) => {
 
     const removeProduct = async () => {
         // remove from cart api call
-        await removeFromCart(product._id);
-        updateCart(product._id);
+        const x = await removeFromCart(product._id);
+        if(x === 401){
+            localStorage.clear();
+            navigate('/login');
+        } else {
+            updateCart(product._id);
+        }
     };
 
     useEffect(() => {

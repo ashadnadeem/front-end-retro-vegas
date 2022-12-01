@@ -14,9 +14,10 @@ export const getCustomer = async () => {
         localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
+
 export const addToCart = async (productId: String) => {
     // get access token from local storage
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
@@ -27,9 +28,10 @@ export const addToCart = async (productId: String) => {
     if (response.data.header.error == 0) {
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
+
 export const removeFromCart = async (productId: String) => {
     // get access token from local storage
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
@@ -40,9 +42,10 @@ export const removeFromCart = async (productId: String) => {
     if (response.data.header.error == 0) {
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
+
 export const addToFav = async (productId: String) => {
     // get access token from local storage
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
@@ -53,9 +56,10 @@ export const addToFav = async (productId: String) => {
     if (response.data.header.error == 0) {
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
+
 export const removeFromFav = async (productId: String) => {
     // get access token from local storage
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
@@ -66,9 +70,10 @@ export const removeFromFav = async (productId: String) => {
     if (response.data.header.error == 0) {
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
+
 export const updateUser = async (email: string, name: string, phoneNo: string) => {
     const config = {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
@@ -89,7 +94,7 @@ export const updateUser = async (email: string, name: string, phoneNo: string) =
         await getUser();
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
 

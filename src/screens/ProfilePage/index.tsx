@@ -1,6 +1,7 @@
 import { Alert, Divider, Snackbar, Stack } from "@mui/material";
 import axios from "axios";
 import React, { FC} from "react"
+import { useNavigate } from "react-router-dom";
 import { updateUser } from "../../api_calls/customer";
 import { updateStore } from "../../api_calls/store";
 import BackButton from "../../components/Buttons/BackButton";
@@ -13,6 +14,7 @@ import InputField from "../../components/TextFields";
 import './styles.css';
 
 const ProfileScreen: FC = () => {
+    const navigate = useNavigate();
     const [name, setName] = React.useState((JSON.parse(localStorage.getItem('user'))).name);
     const [email, setEmail] = React.useState((JSON.parse(localStorage.getItem('user'))).email);
     const [phoneNum, setPhoneNum] = React.useState((JSON.parse(localStorage.getItem('user'))).phoneNo);
@@ -23,11 +25,15 @@ const ProfileScreen: FC = () => {
     const save = async () => {
         const x = await updateUser(email, name, phoneNum);
         const y = await updateStore(storename);
-
-        if(x && y) {
-            setResponse("Updated");
+        if(x === 401 || y === 401){
+            localStorage.clear();
+            navigate('/login');
         } else {
-            setResponse("Error occured.")
+            if(x === true && y === true) {
+                setResponse("Updated");
+            } else {
+                setResponse("Error occured.")
+            }
         }
     }
 

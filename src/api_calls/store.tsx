@@ -14,7 +14,7 @@ export const getStore = async () => {
         localStorage.setItem('store', JSON.stringify(response.data.store));
         return true;
     } else {
-        return false;
+        return response.data.header.errorCode;
     }
 }
 
@@ -41,7 +41,6 @@ export const updateStore = async (name: string) => {
         await getStore();
         return true;
     } else {
-        console.log('y')
-        return false;
+        return response.data.header.errorCode;
     }
 }
