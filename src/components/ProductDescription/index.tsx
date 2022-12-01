@@ -16,7 +16,6 @@ type Props = {
 const ProductDesc: FC<Props> = ({ prod }) => {
     const [addToCartButton, setAddToCartButton] = useState(false);
     const navigate = useNavigate();
-    
     const addToCartHandler = async () => {
         // add product to cart
         console.log("Add to cart: " + prod._id);
