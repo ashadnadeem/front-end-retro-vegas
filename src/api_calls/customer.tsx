@@ -1,4 +1,5 @@
 import axios from "axios";
+import { User } from "../models/user_model";
 import BaseURL from "./url";
 
 export const getCustomer = async () => {
@@ -11,6 +12,46 @@ export const getCustomer = async () => {
     // console.log(response.data.header.error);
     if (response.data.header.error == 0) {
         localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
+        return true;
+    } else {
+        return false;
+    }
+}
+
+export const updateUser = async (email: string, name: string, phoneNo: string) => {
+    const config = {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
+    };
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.put(`${BaseURL}/user/${user._id}`, {
+        email: email,
+        name: name,
+        phoneNo: phoneNo,
+        password: user.password,
+        role: user.role,
+        status: user.status,
+    }, config);
+
+    if (response.data.header.error == 0) {
+        await getUser();
+        return true;
+    } else {
+        return false;
+    }
+}
+
+export const getUser = async () => {
+    const config = {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
+    };
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.get(`${BaseURL}/user/${user._id}`, config)
+    if (response.data.header.error == 0) {
+        localStorage.setItem('user', JSON.stringify(response.data.body.user));
         return true;
     } else {
         return false;
