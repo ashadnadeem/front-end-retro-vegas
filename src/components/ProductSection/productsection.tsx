@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import { WhiteRectangleArrowButton } from "../../components/Buttons/WhiteRectangleButton";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
-import Sidebar from "../../components/Images/Sidebar";
 import { Product } from "../../models/product_model";
 import FavButton from "../Buttons/FavouritButton";
 import ProductCard from "../Cards/ProductCard";

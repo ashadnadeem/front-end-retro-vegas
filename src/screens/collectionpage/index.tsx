@@ -1,4 +1,4 @@
-import React, { FC} from "react"
+import React, { FC } from "react"
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import CollectionCard from "../../components/Cards/CollectionCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
@@ -7,12 +7,13 @@ import './styles.css';
 
 const CollectionScreen: FC = () => {
     // get categeories from local storage
-    const categories: Category[] = JSON.parse(localStorage.getItem('categories') || '[]');
+    const local_categories = localStorage.getItem('categories')
+    const categories: Category[] = JSON.parse(local_categories || '[]');
     return (
         <>
             <div className="collection_page_group">
                 <div className="collection_page_header">
-                    <DefaultHeader inverted={true}/>
+                    <DefaultHeader inverted={true} />
                 </div>
                 <div className="collection_page_content">
                     <h1 className="collection_page_title">Collections</h1>
