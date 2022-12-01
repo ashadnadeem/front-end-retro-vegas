@@ -10,8 +10,8 @@ const HomePageScreen: FC = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{"name": "Guest"}');
     const navigate = useNavigate();
 
-    const Navigate = () => {
-        navigate('/checkout');
+    const navigateToCollection = () => {
+        navigate('/collection');
     }
     const getFirstname = (name: string) => {
         return name.split(' ')[0];
@@ -31,7 +31,7 @@ const HomePageScreen: FC = () => {
                     </div>
                     <h1 className="home_page_title">Buy your favourite antique items.</h1>
                     <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
-                    <RectangleArrowButton text="Check Collection" onPress={Navigate} />
+                    <RectangleArrowButton text="Check Collection" onPress={navigateToCollection} />
                 </div>
             </div>
         </>

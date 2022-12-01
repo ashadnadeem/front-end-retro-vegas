@@ -17,18 +17,24 @@ const ProductDesc: FC<Props> = ({ prod }) => {
     const [addToCartButton, setAddToCartButton] = useState(false);
     const navigate = useNavigate();
     const addToCartHandler = async () => {
-        // add product to cart
-        console.log("Add to cart: " + prod._id);
-        if (!addToCartButton) {
-            // API CALL TO ADD TO CART
-            const x = await addToCart(prod._id);
-            if(x === 401){
-                localStorage.clear();
-                navigate('/login');
-            } {
-                setAddToCartButton(true);
-                navigate("/cart");
+        // get access token from local storage
+        const accessToken = localStorage.getItem('accessToken') || 'guest';
+        const guest: boolean = accessToken === 'guest';
+        if (guest) {
+            navigate('/login');
+        } else {
+            // add product to cart
+            console.log("Add to cart: " + prod._id);
+            if (!addToCartButton) {
+                // API CALL TO ADD TO CART
+                const x = await addToCart(prod._id);
+                if (x === 401) {
+                    localStorage.clear();
+                    navigate('/login');
+                }
             }
+            setAddToCartButton(true);
+            navigate("/cart");
         }
     };
     const [category, setCategory] = useState({});
