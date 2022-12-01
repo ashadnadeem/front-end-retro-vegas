@@ -5,21 +5,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color:  rgba(246, 240, 228, 1);
+    background-color: rgba(246, 240, 228, 1);
     padding: 10px 20px;
     cursor: pointer;
 }
 
-.whitebuttonicon{
+.whitebuttongroup:hover {
+    background-color: rgba(246, 240, 228, 0.8);
+    transform: scale(1.1);
+}
+
+.whitebuttonicon {
     width: 25px;
     height: 25px;
     padding-left: 20px;
 }
 
-.whitebuttontext{
+.whitebuttontext {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
-    color:  #000000;
+    color: #000000;
 }

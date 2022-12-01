@@ -22,29 +22,28 @@ import ProfileScreen from './screens/ProfilePage';
 
 function App() {
   const user = true;
-  return(
+  return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePageScreen/>}/>
-          <Route path="/home" element={<HomePageScreen/>}/>
-          <Route path="/login" element={<LoginScreen/>}/>
-          <Route path="/register" element={<RegisterScreen/>}/>
-          <Route path="/about" element={<AboutScreen/>}/>
-          <Route path="/collection" element={<CollectionScreen />}/>
-          <Route path="/individualcollection" element={<IndividualCollectionScreen/>}/>
-          {/* <Route path='/auction' element={<AuctionScreen/>}/>
-          <Route path='/favourite' element={<FavouriteScreen/>}/>
-          <Route path='/mybids' element={<MyBidsScreen/>}/> */}
-          <Route path='/product' element={<ProductScreen />}/>
-          <Route path='/checkout' element={<CheckoutScreen/>}/>
-          <Route path='/payment' element={<PaymentScreen />}/>
-          <Route path='/cart' element={<CartScreen />}/>
-          <Route path='/search' element={<SearchScreen/>}/>
-          
-          <Route path='/profile' element={<ProfileScreen/>}/>
+          <Route path="/" element={<HomePageScreen />} />
+          <Route path="/home" element={<HomePageScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/collection" element={<CollectionScreen />} />
+          <Route path="/individualcollection" element={<IndividualCollectionScreen />} />
+          <Route path='/auction' element={<AuctionScreen />} />
+          <Route path='/favourite' element={<FavouriteScreen />} />
+          <Route path='/mybids' element={<MyBidsScreen />} />
+          <Route path='/product' element={<ProductScreen />} />
+          <Route path='/checkout' element={<CheckoutScreen />} />
+          <Route path='/payment' element={<PaymentScreen />} />
+          <Route path='/cart' element={<CartScreen />} />
+          <Route path='/search' element={<SearchScreen />} />
+          <Route path='/profile' element={<ProfileScreen />} />
 
-          <Route path ="*" element={"404 NOT FOUND"} />
+          <Route path="*" element={"404 NOT FOUND"} />
         </Routes>
       </BrowserRouter>
     </div>

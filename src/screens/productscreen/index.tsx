@@ -12,21 +12,15 @@ import './styles.css';
 
 
 const ProductScreen: FC = () => {
-    const { state } = useLocation();
-
+    // const { state } = useLocation();
+    // console.log(state.product);
+    const product: Product = useLocation().state.product;
     return (
         <>
             <div className="product_page_group">
-                <div className="product_page_header">
-                    <DefaultHeader inverted={true} /> </div>
-
-                <ProductDesc _id={state.product.id} name={state.product.name} price={state.product.price}
-                    picture={state.product.picture} storeID={state.product.storeID} categoryID={state.product.categoryID}
-                    description={state.product.description} bids={state.product.bids} status={state.product.status} />
-
-                <ProductSection _id={state.product.id} name={state.product.name} price={state.product.price}
-                    picture={state.product.picture} storeID={state.product.storeID} categoryID={state.product.categoryID}
-                    description={state.product.description} bids={state.product.bids} status={state.product.status} />
+                <div className="product_page_header"><DefaultHeader inverted={true} /></div>
+                <ProductDesc prod={product} />
+                <ProductSection prod={product} />
             </div>
         </>
 

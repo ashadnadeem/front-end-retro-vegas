@@ -47,8 +47,7 @@ const IndividualCollectionScreen: FC<Props> = ({ }) => {
                         {/* map for 6 items */}
                         {product.map((item, index) => {
                             return (
-                                <ProductCard key={index} _id={item["_id"]} name={item.name} price={item.price} picture={item.picture} storeID={item.storeID}
-                                    categoryID={item.categoryID} description={item.description} bids={item.bids} status={item.status} />
+                                <ProductCard key={index} product={item} />
                             );
                         })}
                     </div>

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProduct } from "../../../api_calls/product";
 import { Product } from "../../../models/product_model";
@@ -8,25 +8,18 @@ import { RectangleButton } from "../../Buttons/RectangleButton";
 import "./styles.css";
 
 type Props = {
-    index: number;
-    title: string;
-    image: string;
-}
+    product: Product;
+};
 
-const ProductCard: FC<Product> = (product) => {
-    console.log(product);
+const ProductCard: FC<Props> = ({ product }) => {
     const navigate = useNavigate();
-    const [isFav, setIsFav] = useState(false);
-    const markfavourite = () => {
-        setIsFav(!isFav);
-    };
 
     const showProductInfo = async () => {
         const prod = await getProduct(product._id);
         console.log(`product card: ${prod._id}`);
+        // console.log(prod);
         navigate("/product", { state: { product: prod } });
     };
-
     return (
         <div className="product_card_group">
             <div className="product_card_inner">
@@ -37,7 +30,7 @@ const ProductCard: FC<Product> = (product) => {
                             <h1 className="product_card_body_text_title">{product.name}</h1>
                             <h1 className="product_card_body_text_owner">{`by " + "Ashad Nadeem`}</h1>
                         </div>
-                        <FavButton isFav={isFav} onPress={markfavourite} />
+                        <FavButton productID={product._id} />
                     </div>
                     <h1 className="product_card_body_text_price">{"$ " + product.price}</h1>
                 </div>

@@ -24,7 +24,7 @@
     font-weight: 400;
     font-size: 50px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
-    color: rgba(131, 95, 42, 0.64); */                    
+    color: rgba(131, 95, 42, 0.64); */
 }
 
 .desc_description {
@@ -37,20 +37,22 @@
     margin-bottom: 2%;
 }
 
-.desc_collection{
+.desc_collection {
     font-weight: bold;
     margin-bottom: 0.5%;
 }
 
-.desc_description2{
+.desc_description2 {
     margin-top: 0.5%;
     margin-bottom: 2%;
 }
 
-.desc_button{
+.desc_button {
     margin-bottom: 2%;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.desc_price{
+.desc_price {
     font-weight: bold;
 }
