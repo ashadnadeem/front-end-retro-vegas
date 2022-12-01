@@ -1,6 +1,8 @@
-import { Divider, Stack } from "@mui/material";
+import { Alert, Divider, Snackbar, Stack } from "@mui/material";
 import axios from "axios";
 import React, { FC} from "react"
+import { updateUser } from "../../api_calls/customer";
+import { updateStore } from "../../api_calls/store";
 import BackButton from "../../components/Buttons/BackButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import { AdminHeader } from "../../components/Headers/AdminHeader";
@@ -15,26 +17,18 @@ const ProfileScreen: FC = () => {
     const [email, setEmail] = React.useState((JSON.parse(localStorage.getItem('user'))).email);
     const [phoneNum, setPhoneNum] = React.useState((JSON.parse(localStorage.getItem('user'))).phoneNo);
     const [address, setAddress] = React.useState((JSON.parse(localStorage.getItem('user'))).address);
+    const [storename, setStoreName] = React.useState((JSON.parse(localStorage.getItem('store'))).name);
+    const [response, setResponse] = React.useState("");
 
-    const config = {
-        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
-    };
+    const save = async () => {
+        const x = await updateUser(email, name, phoneNum);
+        const y = await updateStore(storename);
 
-    const save = () => {
-        
-        const user = JSON.parse(localStorage.getItem('user'));
-        
-        axios.put('http://localhost:5000/user/' + user._id, {
-            email: email,
-            name: name,
-            phoneNo: phoneNum,
-            password: user.password,
-            role: user.role,
-            status: user.status,
-            address: user.address,
-        }, config).then((response) => {
-          console.log(response.data);
-        });
+        if(x && y) {
+            setResponse("Updated");
+        } else {
+            setResponse("Error occured.")
+        }
     }
 
     return (
@@ -48,6 +42,14 @@ const ProfileScreen: FC = () => {
                 </div>
 
                 <div className="profile_page_content">
+                    <Snackbar open={response == "Updated" || response == "Error occured."}
+                     autoHideDuration={6000}>
+                        <Alert severity= {response == "Updated"? "success": "error"}
+                        sx={{ width: "100%" }}>
+                        {response}
+                        </Alert>
+                    </Snackbar>
+
                     <PageHeader text={"Profile"}/>
 
                         <Stack
@@ -67,7 +69,7 @@ const ProfileScreen: FC = () => {
                             </div>
                             <div className="profile_page_data_container">
                                 <text className="profile_page_data_container_text">Seller</text>
-                                <InputField title="Store Name" placeHolder="" text={name} setText={setName} />
+                                <InputField title="Store Name" placeHolder="" text={storename} setText={setStoreName} />
    
                             </div>
                             
