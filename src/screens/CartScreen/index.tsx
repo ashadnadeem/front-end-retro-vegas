@@ -25,11 +25,7 @@ const CartScreen: FC = () => {
         });
         return subTotal + "";
     }
-    const updateCustomer = async () => {
-        await getCustomer();
-    };
     useEffect(() => {
-        updateCustomer();
         // get cart from local storage
         const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
         const prod_IDs = customer.cart;

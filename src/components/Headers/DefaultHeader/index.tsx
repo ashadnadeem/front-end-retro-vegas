@@ -3,6 +3,7 @@ import { Button as h1, IconButton } from "@mui/material";
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCategories } from "../../../api_calls/category";
+import { getCustomer } from "../../../api_calls/customer";
 
 import "./styles.css";
 
@@ -32,7 +33,8 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         // navigate to login page
         navigate('/login');
     };
-    const navigateToCart = () => {
+    const navigateToCart = async () => {
+        await getCustomer();
         console.log("Cart clicked");
         navigate('/cart');
     };
