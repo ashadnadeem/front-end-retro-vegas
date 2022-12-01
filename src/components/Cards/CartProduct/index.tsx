@@ -6,6 +6,8 @@ import { Product } from "../../../models/product_model";
 import BackButton from "../../Buttons/BackButton";
 import { DefaultHeader } from "../../Headers/DefaultHeader";
 import ProductCard from "../ProductCard";
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+
 import './styles.css';
 
 type Props = {
@@ -35,6 +37,7 @@ const CartProduct: FC<Props> = ({ product }) => {
                     <div className="cart_product_collection">{`Collection: ${category["name"] ?? ""}`}</div>
                     <div className="cart_product_seller">{"Ashad Nadeem"}</div>
                     <div className="cart_product_price">{`$${product.price}`}</div>
+                    <div className="cart_product_remove"> <CancelOutlinedIcon/> </div>
                 </div>
             </div>
             {/* <div>
