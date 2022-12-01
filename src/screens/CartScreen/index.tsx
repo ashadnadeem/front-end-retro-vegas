@@ -25,6 +25,11 @@ const CartScreen: FC = () => {
         });
         return subTotal + "";
     }
+    const removeProduct = (productID: String) => {
+        const newCart = cart.filter((product: Product) => product._id !== productID);
+        setCart(newCart);
+    }
+
     useEffect(() => {
         // get cart from local storage
         const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
@@ -38,7 +43,6 @@ const CartScreen: FC = () => {
         });
         console.log(cart);
     }, []);
-
     return (
         <>
             <div className="cart_screen">
@@ -51,14 +55,18 @@ const CartScreen: FC = () => {
                     <div className="cart_screen_products">
                         {cart.map((product: Product) => (
                             <div className="cart_screen_product">
-                                <CartProduct product={product} />
+                                <CartProduct product={product} updateCart={removeProduct} />
                             </div>
                         ))}
                     </div>
-                    <div className="cart_screen_subtotal">{`Subtotal $` + calculateSubTotal()}</div>
-                    <div className="cart_screen_description">Shipping calculated at checkout</div>
-                    <div className="cart_screen_button">
-                        <RectangleArrowButton text={"Check out"} onPress={Navigate} />
+                    <div className="cart_screen_footer">
+                        <div>
+                            <div className="cart_screen_subtotal">{`Subtotal $` + calculateSubTotal()}</div>
+                            <div className="cart_screen_description">Shipping calculated at checkout</div>
+                        </div>
+                        <div className="cart_screen_button">
+                            <RectangleArrowButton text={"Check out"} onPress={Navigate} />
+                        </div>
                     </div>
                 </div>
             </div>

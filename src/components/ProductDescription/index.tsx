@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+import { useNavigate, useNavigation } from "react-router-dom";
 import { getCategory } from "../../api_calls/category";
 import { addToCart } from "../../api_calls/customer";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
@@ -14,6 +15,7 @@ type Props = {
 
 const ProductDesc: FC<Props> = ({ prod }) => {
     const [addToCartButton, setAddToCartButton] = useState(false);
+    const navigate = useNavigate();
     const addToCartHandler = async () => {
         // add product to cart
         console.log("Add to cart: " + prod._id);
@@ -22,6 +24,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
             await addToCart(prod._id);
         }
         setAddToCartButton(true);
+        navigate("/cart");
     };
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {

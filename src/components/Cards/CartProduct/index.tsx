@@ -9,23 +9,33 @@ import ProductCard from "../ProductCard";
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 import './styles.css';
+import { removeFromCart } from "../../../api_calls/customer";
 
 type Props = {
     product: Product;
+    updateCart: (productID: String) => void;
 };
 
-const CartProduct: FC<Props> = ({ product }) => {
+const CartProduct: FC<Props> = ({ product, updateCart }) => {
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {
         const category: Object = await getCategory(id);
         setCategory(category);
     };
+
+    const removeProduct = async () => {
+        // remove from cart api call
+        await removeFromCart(product._id);
+        updateCart(product._id);
+    };
+
     useEffect(() => {
         // get category id from product
         const categoryID = product.categoryID;
         // get category from category id through API call
         categoryFetch(categoryID);
     }, []);
+
     return (
         <>
             <div className="cart_product_content">
@@ -37,7 +47,7 @@ const CartProduct: FC<Props> = ({ product }) => {
                     <div className="cart_product_collection">{`Collection: ${category["name"] ?? ""}`}</div>
                     <div className="cart_product_seller">{"Ashad Nadeem"}</div>
                     <div className="cart_product_price">{`$${product.price}`}</div>
-                    <div className="cart_product_remove"> <CancelOutlinedIcon/> </div>
+                    <div className="cart_product_remove" onClick={removeProduct}> <CancelOutlinedIcon /> </div>
                 </div>
             </div>
             {/* <div>

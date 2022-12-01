@@ -1,4 +1,4 @@
-import { Logout, Person, ShoppingCart } from "@mui/icons-material";
+import { Logout, Person, ShoppingCart, ShoppingCartOutlined } from "@mui/icons-material";
 import { Button as h1, IconButton } from "@mui/material";
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
@@ -47,6 +47,10 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         console.log("Profile clicked");
         navigate('/profile');
     };
+    const getNumberOfItemsInCart = () => {
+        const customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
+        return customer.cart.length;
+    }
     return (
         <div className={inverted ? "default_header_bg_invert" : "default_header_bg"}>
             <label className={inverted ? "default_header_logo_invert" : "default_header_logo"} onClick={navigateToHomePage}>RetroV</label>
@@ -60,9 +64,12 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
                 <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large" onClick={navigateToProfile}>
                     <Person />
                 </IconButton>
-                <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>
-                    <ShoppingCart />
-                </IconButton>
+                <div className="default_header_cart_bucket">
+                    <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>
+                        <ShoppingCart />
+                    </IconButton>
+                    <p className="default_header_cart_bucket_text">{getNumberOfItemsInCart()}</p>
+                </div>
                 <IconButton className='default_header_icon' aria-label="logout" color='inherit' size="large" onClick={logoutHandler}>
                     <Logout />
                 </IconButton>
