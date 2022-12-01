@@ -16,6 +16,7 @@ import ProductScreen from './screens/productscreen';
 import MyBidsScreen from './screens/mybidspage';
 import CheckoutScreen from './screens/Checkoutpage';
 import CartScreen from './screens/CartScreen';
+import SearchScreen from './screens/searchScreen';
 import PaymentScreen from './screens/Paymentpage';
 import ProfileScreen from './screens/ProfilePage';
 
@@ -39,6 +40,8 @@ function App() {
           <Route path='/checkout' element={<CheckoutScreen/>}/>
           <Route path='/payment' element={<PaymentScreen />}/>
           <Route path='/cart' element={<CartScreen />}/>
+          <Route path='/search' element={<SearchScreen/>}/>
+          
           <Route path='/profile' element={<ProfileScreen/>}/>
 
           <Route path ="*" element={"404 NOT FOUND"} />
