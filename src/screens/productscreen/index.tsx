@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useLocation } from "react-router-dom";
+import BackButton from "../../components/Buttons/BackButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
 import { WhiteRectangleArrowButton } from "../../components/Buttons/WhiteRectangleButton";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
@@ -19,6 +20,9 @@ const ProductScreen: FC = () => {
         <>
             <div className="product_page_group">
                 <div className="product_page_header"><DefaultHeader inverted={true} /></div>
+                <div className="product_page_backbutton">
+                    <BackButton/>
+                </div>
                 <ProductDesc prod={product} />
                 <ProductSection prod={product} />
             </div>

@@ -1,5 +1,6 @@
 import { Favorite } from "@mui/icons-material";
 import React, { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addToFav, removeFromFav } from "../../../api_calls/customer";
 import { Product } from "../../../models/product_model";
 import { Customer } from "../../../models/user_model";
@@ -11,16 +12,27 @@ type Props = {
 
 const FavButton: FC<Props> = ({ productID }) => {
     const [isFav, setIsFav] = useState(false);
+    const navigate = useNavigate();
+
     const onPress = async () => {
         if (isFav == false) {
             // add to fav
-            await addToFav(productID);
+            const x = await addToFav(productID);
+            if(x === 401){
+                localStorage.clear();
+                navigate('/login');
+            }
         } else {
             // remove from fav
-            await removeFromFav(productID);
+            const x = await removeFromFav(productID);
+            if(x === 401){
+                localStorage.clear();
+                navigate('/login');
+            }
         }
         setIsFav(!isFav);
     };
+
     useEffect(() => {
         console.log("FavButton rendered");
         // fetch customers from local storage and get wishlist

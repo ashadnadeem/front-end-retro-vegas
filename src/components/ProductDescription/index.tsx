@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getCategory } from "../../api_calls/category";
 import { addToCart } from "../../api_calls/customer";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
@@ -21,7 +21,11 @@ const ProductDesc: FC<Props> = ({ prod }) => {
         console.log("Add to cart: " + prod._id);
         if (!addToCartButton) {
             // API CALL TO ADD TO CART
-            await addToCart(prod._id);
+            const x = await addToCart(prod._id);
+            if(x === 401){
+                localStorage.clear();
+                navigate('/login');
+            }
         }
         setAddToCartButton(true);
         navigate("/cart");
