@@ -29,6 +29,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
             }
         }
         setAddToCartButton(true);
+        navigate("/cart");
     };
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {

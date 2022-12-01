@@ -32,6 +32,20 @@ export const addToCart = async (productId: String) => {
     }
 }
 
+export const removeFromCart = async (productId: String) => {
+    // get access token from local storage
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
+    // remove product from cart with customer id from backend using access token
+    const response = await axios.get(`${BaseURL}/customer/removefromcart/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } });
+    // console.log(response.data.header.error);
+    localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
+    if (response.data.header.error == 0) {
+        return true;
+    } else {
+        return response.data.header.errorCode;
+    }
+}
+
 export const addToFav = async (productId: String) => {
     // get access token from local storage
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));;

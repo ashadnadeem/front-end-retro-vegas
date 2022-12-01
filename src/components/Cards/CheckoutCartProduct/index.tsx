@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FC } from "react";
+import { getCategory } from "../../../api_calls/category";
+import { Product } from "../../../models/product_model";
 import './styles.css';
 
-const CheckoutCartProduct: FC= () => {
+
+type Props = {
+    product: Product;
+};
+
+const CheckoutCartProduct: FC<Props> = ({product}) => {
+    const [category, setCategory] = useState({});
+    const categoryFetch = async (id: String) => {
+        const category: Object = await getCategory(id);
+        setCategory(category);
+    };
+    useEffect(() => {
+        // get category id from product
+        const categoryID = product.categoryID;
+        // get category from category id through API call
+        categoryFetch(categoryID);
+    }, []);
+   
     return(
         <>
             <div className="checkout_cart_product_content">
@@ -12,19 +31,19 @@ const CheckoutCartProduct: FC= () => {
 
                 <div>
                     <div className="checkout_cart_product_title">
-                        Five Rupee Note
+                    {product.name}
                     </div>
 
                     <div className="checkout_cart_product_collection">
-                        Collection: Collectibles
+                    {`Collection: ${category["name"] ?? ""}`}
                     </div>
 
                     <div className="checkout_cart_product_seller">
-                        Ashad Nadeem
+                    {"Ashad Nadeem"}
                     </div>
 
                     <div className="checkout_cart_product_price">
-                        $9.99
+                    {`$${product.price}`}
                     </div>
                 </div>
             </div>

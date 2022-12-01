@@ -1,5 +1,4 @@
-
-.searchbar_input{
+.searchbar_input {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -12,10 +11,10 @@
     height: 100%;
     padding: 0px 20px;
     color: rgba(131, 95, 42, 0.45);
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0.75);
 }
 
-.searchbar_group{
+.searchbar_group {
     display: flex;
     flex-direction: row;
     justify-content: center;

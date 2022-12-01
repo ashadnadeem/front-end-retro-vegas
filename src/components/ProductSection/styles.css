@@ -20,11 +20,11 @@
 }
 
 .section_image {
-    /* width: 70%;
-    height: 400px; */
+    width: 350px;
+    height: 300px;
     /* margin-bottom: 80%; */
     margin-left: -100%;
-    margin-top: -70%;
+    margin-top: -100%;
 }
 
 .section_text {

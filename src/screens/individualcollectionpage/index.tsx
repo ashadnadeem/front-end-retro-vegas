@@ -1,5 +1,6 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
+import { getProductOfCategory } from "../../api_calls/product";
 import BackButton from "../../components/Buttons/BackButton";
 import FilterButton from "../../components/Buttons/FilterButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
@@ -14,15 +15,28 @@ type Props = {
 };
 
 const IndividualCollectionScreen: FC<Props> = ({ }) => {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [offset, setOffset] = useState(0);
+    const [noMore, setNoMore] = useState(false);
     const { state } = useLocation();
     const cat = state.category;
     const prods = state.products;
-    console.log(`successfully fetched products: ${prods.length}`);
-    console.log(prods);
-    //ApI call to get the products from the category id
-    const product: Product[] = prods;
-    // const product = [];
-    // console.log(product);
+
+    const loadMoreHandler = async () => {
+        console.log("Load more");
+        const prods = await getProductOfCategory(cat._id, offset + 3);
+        if (prods.length === 0) {
+            setNoMore(true);
+        }
+        setProducts([...products, ...prods]);
+        setOffset(offset + 3);
+    };
+
+    useEffect(() => {
+        setProducts(prods);
+        console.log(`successfully fetched products: ${prods.length}`);
+    }, [prods]);
+
     return (
         <>
             <div className="ind_collection_page_group">
@@ -44,15 +58,14 @@ const IndividualCollectionScreen: FC<Props> = ({ }) => {
                         </div>
                     </div>
                     <div className="ind_colletion_page_gallery">
-                        {/* map for 6 items */}
-                        {product.map((item, index) => {
+                        {products.map((item, index) => {
                             return (
                                 <ProductCard key={index} product={item} />
                             );
                         })}
                     </div>
                     <br></br>
-                    <RectangleArrowButton invert text="Load-More" onPress={function (): void { }} />
+                    {noMore ? <></> : <RectangleArrowButton invert text="Load More" onPress={loadMoreHandler} />}
                 </div>
             </div>
         </>
