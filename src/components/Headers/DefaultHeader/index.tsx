@@ -38,6 +38,10 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
         console.log("Cart clicked");
         navigate('/cart');
     };
+    const navigateToProfile = () => {
+        console.log("Profile clicked");
+        navigate('/profile');
+    };
     return (
         <div className={inverted ? "default_header_bg_invert" : "default_header_bg"}>
             <label className={inverted ? "default_header_logo_invert" : "default_header_logo"} onClick={navigateToHomePage}>RetroV</label>
@@ -48,7 +52,7 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToAuctionPage}>Auctions</h1>
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToFavouritePage}>Favourites</h1>
                 <label className={inverted ? "default_header_raised_button_invert" : "default_header_raised_button"} onClick={onSellItemClick}>Sell Items</label>
-                <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large">
+                <IconButton className='default_header_icon' aria-label="account" color='inherit' size="large" onClick={navigateToProfile}>
                     <Person />
                 </IconButton>
                 <IconButton className='default_header_icon' aria-label="cart" color='inherit' size="large" onClick={navigateToCart}>

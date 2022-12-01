@@ -13,10 +13,15 @@ type Props = {
 };
 
 const ProductDesc: FC<Props> = ({ prod }) => {
+    const [addToCartButton, setAddToCartButton] = useState(false);
     const addToCartHandler = async () => {
         // add product to cart
         console.log("Add to cart: " + prod._id);
-        await addToCart(prod._id);
+        if (!addToCartButton) {
+            // API CALL TO ADD TO CART
+            await addToCart(prod._id);
+        }
+        setAddToCartButton(true);
     };
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {
@@ -39,7 +44,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
                     <div className="desc_price"> $ {prod.price} </div>
                     <div className="desc_description2">Highest Bid: $ 9.99</div>
                     <div className="desc_button">
-                        <WhiteRectangleArrowButton text="Add to Cart" onPress={addToCartHandler} ></WhiteRectangleArrowButton>
+                        <WhiteRectangleArrowButton text={addToCartButton ? "Remove from Cart" : "Add to Cart"} onPress={addToCartHandler} ></WhiteRectangleArrowButton>
                     </div>
                     <div className="desc_button">
                         <RectangleArrowButton text="Bid on it" invert={false} onPress={() => { }} ></RectangleArrowButton>

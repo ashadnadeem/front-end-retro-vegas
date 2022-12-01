@@ -23,6 +23,33 @@ export const addToCart = async (productId: String) => {
     // add product to cart with customer id from backend using access token
     const response = await axios.get(`${BaseURL}/customer/addtocart/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } });
     // console.log(response.data.header.error);
+    localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
+    if (response.data.header.error == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+export const addToFav = async (productId: String) => {
+    // get access token from local storage
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
+    // add product to wishlist with customer id from backend using access token
+    const response = await axios.get(`${BaseURL}/customer/addtowishlist/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } });
+    // console.log(response.data.header.error);
+    localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
+    if (response.data.header.error == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+export const removeFromFav = async (productId: String) => {
+    // get access token from local storage
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'));;
+    // add product to wishlist with customer id from backend using access token
+    const response = await axios.get(`${BaseURL}/customer/removefromwishlist/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } });
+    // console.log(response.data.header.error);
+    localStorage.setItem('customer', JSON.stringify(response.data.body.customer));
     if (response.data.header.error == 0) {
         return true;
     } else {
