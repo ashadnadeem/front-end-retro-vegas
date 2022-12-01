@@ -16,6 +16,7 @@ import ProductScreen from './screens/productscreen';
 import MyBidsScreen from './screens/mybidspage';
 import CheckoutScreen from './screens/Checkoutpage';
 import CartScreen from './screens/CartScreen';
+import SearchScreen from './screens/searchScreen';
 
 function App() {
   const user = true;
@@ -36,6 +37,8 @@ function App() {
           <Route path='/product' element={<ProductScreen />}/>
           <Route path='/checkout' element={<CheckoutScreen/>}/>
           <Route path='/cart' element={<CartScreen />}/>
+          <Route path='/search' element={<SearchScreen/>}/>
+          
 
           <Route path ="*" element={"404 NOT FOUND"} />
         </Routes>

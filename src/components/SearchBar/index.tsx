@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 type Props = {
@@ -8,10 +9,13 @@ type Props = {
 }
 
 const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
-
-    const onPress = () => {
-
+    const navigate = useNavigate();
+    const Navigate = () => {
+        navigate('/search',{state:{query: text}});
     }
+    // const onPress = {
+    //     Navigate
+    // }
 
     return (
         <div className="searchbar_group">
@@ -22,7 +26,7 @@ const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
                 onChange={e => setText(e.target.value)}
             />
             {/* search icon */}
-            <button className="searchbar_icon_bg" onClick={onPress}>
+            <button className="searchbar_icon_bg" onClick={Navigate}>
                 <img className="searchbar_icon" src={require("../../assets/icons/search.png")} />
             </button>
 
