@@ -2,16 +2,22 @@ import React from "react";
 import { FC } from "react";
 import BackButton from "../../components/Buttons/BackButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
-import ProductCard from "../../components/Cards/ProductCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
-import CartProduct from "../CartProduct";
+import CartProduct from "../../components/Cards/CartProduct";
 import './styles.css';
+import { useNavigate } from "react-router-dom";
 
-    const CartScreen: FC= () => {
+const CartScreen: FC= () => {
+ const navigate = useNavigate();
+
+ const Navigate = () => {
+    navigate('/checkout');
+ }
+
     return(
         <>
-        <div >
-            <div className="cart_Screen_header">
+        <div className="cart_screen">
+            <div className="cart_screen_header">
                 <DefaultHeader inverted = {true}/>
             </div>
             <div className="cart_screen_content">
@@ -21,12 +27,19 @@ import './styles.css';
                 <div className="cart_screen_title">
                    Your Cart
                 </div>
-                <div className="cart_screen_product">
-                    <CartProduct/>
+
+                <div className="cart_screen_products">
+                    <div className="cart_screen_product">
+                        <CartProduct/>
+                    </div>
+                    <div className="cart_screen_product">
+                        <CartProduct/>
+                    </div>
+                    <div className="cart_screen_product">
+                        <CartProduct/>
+                    </div>
                 </div>
-                <div className="cart_screen_product">
-                    <CartProduct/>
-                </div>
+                
 
                 <div className="cart_screen_subtotal">
                     Subtotal $18.74
@@ -35,9 +48,7 @@ import './styles.css';
                     Shipping calculated at checkout
                 </div>
                 <div className="cart_screen_button">
-                    <RectangleArrowButton text={"Check out"} onPress={function (): void {
-                            throw new Error("Function not implemented.");
-                        } } />              
+                    <RectangleArrowButton text={"Check out"} onPress={Navigate} />              
 
                </div>
         </div>

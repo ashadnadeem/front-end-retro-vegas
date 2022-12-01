@@ -1,12 +1,27 @@
 .checkout_form_textfields {
     flex-direction: column;
-    /* width: 50%; */
 }
 
-.checkout_form_group{
+.checkout_form_group {
     width: 50%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     padding: 10px;
+}
+
+.checkout_form_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    margin-top: -3%;
+}
+
+.checkout_form_textfields_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30%;
 }

@@ -16,7 +16,6 @@ import ProductScreen from './screens/productscreen';
 import MyBidsScreen from './screens/mybidspage';
 import CheckoutScreen from './screens/Checkoutpage';
 import CartScreen from './screens/CartScreen';
-import CartProduct from './screens/CartProduct';
 
 function App() {
   const user = true;

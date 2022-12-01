@@ -2,6 +2,9 @@ import { Divider } from "@mui/material";
 import React, { FC} from "react"
 import BackButton from "../../components/Buttons/BackButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
+import CartProduct from "../../components/Cards/CartProduct";
+import CheckoutCartProduct from "../../components/Cards/CheckoutCartProduct";
+import CheckoutCart from "../../components/Containers/CheckoutCart";
 import CheckoutForm from "../../components/Forms/CheckoutForm";
 import LoginForm from "../../components/Forms/LoginForm";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
@@ -22,39 +25,7 @@ const CheckoutScreen: FC = () => {
 
                 <div className="checkout_page_content">
                     <CheckoutForm/>
-
-                    <div className="checkout_cart_group">
-                        
-                        <div className="checkout_cart">
-                        
-                        </div>
-        
-                        <div className="checkout_summary_text">
-                            <div className="checkout_summary_total">
-                                <text className="checkout_total_text">Subtotal</text>
-                                <text className="checkout_total_text">$18.74</text>
-                            </div>
-
-                            <div className="checkout_summary_total">
-                                <text className="">Subtotal</text>
-                                <text className="">$18.74</text>
-                            </div>
-
-                        </div>
-
-                        <div className="checkout_summary_text_2">
-                            <div className="checkout_summary_total">
-                                <text className="checkout_total_text">Total</text>
-                                <text className="checkout_total_text">$18.74</text>
-                            </div>
-                        </div>
-                        
-                        <div className="checkout_page_button">
-                            <RectangleArrowButton text={"Payment"} onPress={() => {}}/>
-                        </div>
-                        
-                    </div>
-
+                    <CheckoutCart/>
                 </div>
             </div>
         </>
