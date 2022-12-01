@@ -15,14 +15,14 @@ type Props = {
 
 const SearchScreen: FC = () => {
     const { state } = useLocation();
-    
+
     const [searchText, setSearchText] = React.useState("");
 
-   const products=state.searchProduct;
-   console.log(products);
-return(
-    <>
-    <div className="sarch_page_group">
+    const products = state.searchProduct;
+    console.log(products);
+    return (
+        <>
+            <div className="sarch_page_group">
                 <div className="search_page_header">
                     <DefaultHeader inverted={true} />
                 </div>
@@ -31,24 +31,23 @@ return(
                         <BackButton />
                     </div>
                     <div className="search_page_searchbar">
-                    <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
+                        <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
                     </div>
                     <div className="search_page_title_header">
                         <div className="search_page_title_text_group">
                             <h1 className="search_page_title">All Products</h1>
                             <h1 className="search_page_mini_title">{"-"}</h1>
-                           <h1 className="search_page_mini_title">{products.name}</h1>
+                            <h1 className="search_page_mini_title">{products.name}</h1>
                         </div>
                         <div className="search_page_filter_button">
                             <FilterButton onPress={() => { console.log("Filter button pressed") }} />
                         </div>
-                     </div>
-                   <div className="search_page_gallery">
+                    </div>
+                    <div className="search_page_gallery">
                         {/* map for 6 items */}
                         {products.map((item, index) => {
                             return (
-                                <ProductCard key={index} _id={item["_id"]} name={item.name} price={item.price} picture={item.picture} storeID={item.storeID}
-                                    categoryID={item.categoryID} description={item.description} bids={item.bids} status={item.status} />
+                                <ProductCard key={index} product={item} />
                             );
                         })}
                     </div>
@@ -56,8 +55,8 @@ return(
                     <RectangleArrowButton invert text="Load-More" onPress={function (): void { }} />
                 </div>
             </div>
-            </>
-);
+        </>
+    );
 }
 
 export default SearchScreen;
