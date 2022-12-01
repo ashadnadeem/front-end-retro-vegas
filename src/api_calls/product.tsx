@@ -11,7 +11,7 @@ export const getProduct = async (ProductID: String) => {
     if (response.data.header.error == 0) {
         // localStorage.setItem(`${response.data.body.product.name}`, JSON.stringify(response.data.body.product));
         // console.log(`${localStorage.getItem(`${response.data.body.product.name}`)}`);
-        console.log(response.data.body.product.name)
+        // console.log(response.data.body.product.name)
         return response.data.body.product;
     } else {
         return response.data.header.errorMessage;

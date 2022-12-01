@@ -11,3 +11,13 @@ export const getCategories = async () => {
         return response.data.header.errorMessage;
     }
 }
+
+export const getCategory = async (CategoryID: String) => {
+    const response = await axios.get(`${BaseURL}/category/${CategoryID}`, {});
+    console.log(response.data.header.error);
+    if (response.data.header.error == 0) {
+        return response.data.body.category;
+    } else {
+        return {};
+    }
+}
