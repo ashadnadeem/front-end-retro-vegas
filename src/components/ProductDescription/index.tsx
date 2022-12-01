@@ -25,10 +25,11 @@ const ProductDesc: FC<Props> = ({ prod }) => {
             if(x === 401){
                 localStorage.clear();
                 navigate('/login');
+            } {
+                setAddToCartButton(true);
+                navigate("/cart");
             }
         }
-        setAddToCartButton(true);
-        navigate("/cart");
     };
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {
