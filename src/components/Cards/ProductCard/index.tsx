@@ -28,7 +28,7 @@ const ProductCard: FC<Props> = ({ product }) => {
                     <div className="product_card_top_body">
                         <div className="product_card_body_text">
                             <h1 className="product_card_body_text_title">{product.name}</h1>
-                            <h1 className="product_card_body_text_owner">{`by " + "Ashad Nadeem`}</h1>
+                            <h1 className="product_card_body_text_owner">{`by Ashad Nadeem`}</h1>
                         </div>
                         <FavButton productID={product._id} />
                     </div>
