@@ -9,7 +9,7 @@ type Props = {
     product: Product;
 };
 
-const CheckoutCartProduct: FC<Props> = ({product}) => {
+const CheckoutCartProduct: FC<Props> = ({ product }) => {
     const [category, setCategory] = useState({});
     const categoryFetch = async (id: String) => {
         const category: Object = await getCategory(id);
@@ -21,35 +21,35 @@ const CheckoutCartProduct: FC<Props> = ({product}) => {
         // get category from category id through API call
         categoryFetch(categoryID);
     }, []);
-   
-    return(
+
+    return (
         <>
             <div className="checkout_cart_product_content">
                 <div>
-                    <img className="checkout_cart_product_image" src={require('../../../assets/productImage.png')} />
+                    <img className="checkout_cart_product_image" src={product.picture} />
                 </div>
 
                 <div>
                     <div className="checkout_cart_product_title">
-                    {product.name}
+                        {product.name}
                     </div>
 
                     <div className="checkout_cart_product_collection">
-                    {`Collection: ${category["name"] ?? ""}`}
+                        {`Collection: ${category["name"] ?? ""}`}
                     </div>
 
                     <div className="checkout_cart_product_seller">
-                    {"Ashad Nadeem"}
+                        {"Ashad Nadeem"}
                     </div>
 
                     <div className="checkout_cart_product_price">
-                    {`$${product.price}`}
+                        {`$${product.price}`}
                     </div>
                 </div>
             </div>
         </>
     )
-    
+
 }
 
 export default CheckoutCartProduct;

@@ -19,12 +19,12 @@ const CheckoutCart: FC = () => {
         cart.forEach((product: Product) => {
             subTotal += product.price;
         });
-        return subTotal;
+        return Math.round(subTotal * 100) / 100;
     }
     const calculateTotal = () => {
         let Total = 10;
-    Total+= calculateSubTotal();
-        return Total + "";
+        Total += calculateSubTotal();
+        return Math.round(Total * 100) / 100;
     }
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const CheckoutCart: FC = () => {
             <div className="checkout_cart">
                 {cart.map((product: Product) => (
                     <div className="cart_screen_product">
-                        <CheckoutCartProduct product= {product}/>
+                        <CheckoutCartProduct product={product} />
                     </div>
                 ))}
             </div>

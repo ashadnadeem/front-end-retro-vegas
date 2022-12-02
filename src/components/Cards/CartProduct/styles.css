@@ -42,8 +42,8 @@
 }
 
 .cart_product_image {
-    width: 11%;
-    height: 20%;
+    width: 80px;
+    height: 80px;
     margin-top: 2%;
     margin-right: 10px;
 }

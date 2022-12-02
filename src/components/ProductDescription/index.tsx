@@ -14,7 +14,7 @@ type Props = {
 };
 
 const ProductDesc: FC<Props> = ({ prod }) => {
-    const [addToCartButton, setAddToCartButton] = useState(false);
+    const [inCart, setInCart] = useState(false);
     const navigate = useNavigate();
     const addToCartHandler = async () => {
         // get access token from local storage
@@ -25,7 +25,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
         } else {
             // add product to cart
             console.log("Add to cart: " + prod._id);
-            if (!addToCartButton) {
+            if (!inCart) {
                 // API CALL TO ADD TO CART
                 const x = await addToCart(prod._id);
                 if (x === 401) {
@@ -33,7 +33,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
                     navigate('/login');
                 }
             }
-            setAddToCartButton(true);
+            setInCart(true);
             navigate("/cart");
         }
     };
@@ -47,6 +47,11 @@ const ProductDesc: FC<Props> = ({ prod }) => {
         const categoryID = prod.categoryID;
         // get category from category id through API call
         categoryFetch(categoryID);
+        // get customer from local storage
+        const customer = JSON.parse(localStorage.getItem('customer') || '{}');
+        // check if product is in cart
+        const cart = customer.cart || [];
+        setInCart(cart.includes(prod._id));
     }, []);
     return (
         <>
@@ -58,7 +63,7 @@ const ProductDesc: FC<Props> = ({ prod }) => {
                     <div className="desc_price"> $ {prod.price} </div>
                     <div className="desc_description2">Highest Bid: $ 9.99</div>
                     <div className="desc_button">
-                        <WhiteRectangleArrowButton text={addToCartButton ? "Remove from Cart" : "Add to Cart"} onPress={addToCartHandler} ></WhiteRectangleArrowButton>
+                        <WhiteRectangleArrowButton text={inCart ? "Remove from Cart" : "Add to Cart"} onPress={addToCartHandler} ></WhiteRectangleArrowButton>
                     </div>
                     <div className="desc_button">
                         <RectangleArrowButton text="Bid on it" invert={false} onPress={() => { }} ></RectangleArrowButton>

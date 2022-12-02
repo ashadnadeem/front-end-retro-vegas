@@ -22,7 +22,7 @@ const CartScreen: FC = () => {
         cart.forEach((product: Product) => {
             subTotal += product.price;
         });
-        return subTotal + "";
+        return Math.round(subTotal * 100) / 100;
     }
     const removeProduct = (productID: String) => {
         const newCart = cart.filter((product: Product) => product._id !== productID);
