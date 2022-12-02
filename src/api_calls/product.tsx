@@ -38,12 +38,17 @@ export const getProductOfCategory = async (CategoryId: String, offset: Number) =
 }
 
 
-export const searchProduct = async (name: String) => {
+export const searchProduct = async (name: String, offset: Number) => {
     const config = {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
     };
 
-    const response = await axios.post(`${BaseURL}/product/search`, { query: name }, config);
+    const body= {
+        "query": name,
+        "offset" : offset
+    }
+
+    const response = await axios.post(`${BaseURL}/product/search`,  body,  config);
     console.log(response.data.header.error);
     if (response.data.header.error == 0) {
         console.log(response.data.body.product);

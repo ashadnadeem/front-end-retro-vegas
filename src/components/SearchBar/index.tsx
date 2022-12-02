@@ -15,7 +15,7 @@ const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
     const navigate = useNavigate();
 
     const Navigate = async () => {
-        const products = await searchProduct(text);
+        const products = await searchProduct(text,0);
         navigate('/search',{state:{searchProduct:  products}});
     }
    
