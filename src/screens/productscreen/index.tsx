@@ -21,7 +21,7 @@ const ProductScreen: FC = () => {
             <div className="product_page_group">
                 <div className="product_page_header"><DefaultHeader inverted={true} /></div>
                 <div className="product_page_backbutton">
-                    <BackButton/>
+                    <BackButton />
                 </div>
                 <ProductDesc prod={product} />
                 <ProductSection prod={product} />
