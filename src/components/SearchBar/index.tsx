@@ -15,10 +15,10 @@ const SearchBar: FC<Props> = ({ placeHolder, text, setText }) => {
     const navigate = useNavigate();
 
     const Navigate = async () => {
-        const products = await searchProduct(text,0);
-        navigate('/search',{state:{searchProduct:  products}});
+        const products = await searchProduct(text, 0);
+        navigate('/search', { state: { searchProduct: products, query: text } });
     }
-   
+
     return (
         <div className="searchbar_group">
             <input

@@ -35,6 +35,7 @@ const SearchScreen: FC<Props> = ({ }) => {
     };
     useEffect(() => {
         setProducts(prods);
+        setSearchText(state.query);
         console.log(`successfully fetched products: ${prods.length}`);
     }, [prods]);
 
