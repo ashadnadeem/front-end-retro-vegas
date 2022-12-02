@@ -8,6 +8,7 @@ export type User = {
     status: string;
     storeID: string;
     customerID: string;
+    address: string;
 };
 
 export type Store = {

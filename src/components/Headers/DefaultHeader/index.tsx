@@ -30,6 +30,9 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
     };
     const onSellItemClick = () => {
         console.log("Sell item clicked");
+        if (guest) {
+            navigate('/login');
+        }
     }
     const logoutHandler = () => {
         console.log("Logout clicked");
@@ -67,8 +70,10 @@ const DefaultHeader: FC<Props> = ({ inverted }) => {
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToAboutPage}>About</h1>
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToCollectionPage} >Collections</h1>
                 <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToAuctionPage}>Auctions</h1>
-                <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToFavouritePage}>Favourites</h1>
-                <label className={inverted ? "default_header_raised_button_invert" : "default_header_raised_button"} onClick={onSellItemClick}>Sell Items</label>
+                <>
+                    {guest ? <></> : <h1 className={inverted ? "default_header_text_invert" : "default_header_text"} color="inherit" onClick={navigateToFavouritePage}>Favourites</h1>}
+                </>
+                <label className={inverted ? "default_header_raised_button_invert" : "default_header_raised_button"} onClick={onSellItemClick}>{guest ? "Sign In" : "Sell Items"}</label>
                 <>
                     {guest ? <></>
                         : <>
