@@ -1,5 +1,6 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
+import { searchProduct } from "../../api_calls/product";
 import BackButton from "../../components/Buttons/BackButton";
 import FilterButton from "../../components/Buttons/FilterButton";
 import { RectangleArrowButton } from "../../components/Buttons/RectangleButton";
@@ -13,13 +14,31 @@ type Props = {
 
 };
 
-const SearchScreen: FC = () => {
+const SearchScreen: FC<Props> = ({ }) => {
     const { state } = useLocation();
-
+    const [offset, setOffset] = useState(0);
+    const [noMore, setNoMore] = useState(false);
     const [searchText, setSearchText] = React.useState("");
+    const [products, setProducts] = useState<Product[]>([]);
 
-    const products = state.searchProduct;
-    console.log(products);
+    const prods = state.searchProduct;
+    console.log(prods);
+
+    const loadMoreHandler = async () => {
+        console.log("Load More");
+        const prods = await searchProduct(searchText, offset + 3);
+        if (prods.length === 0) {
+            setNoMore(true);
+        }
+        setProducts([...products, ...prods]);
+        setOffset(offset + 3);
+    };
+    useEffect(() => {
+        setProducts(prods);
+        console.log(`successfully fetched products: ${prods.length}`);
+    }, [prods]);
+
+
     return (
         <>
             <div className="sarch_page_group">
@@ -37,7 +56,7 @@ const SearchScreen: FC = () => {
                         <div className="search_page_title_text_group">
                             <h1 className="search_page_title">All Products</h1>
                             <h1 className="search_page_mini_title">{"-"}</h1>
-                            <h1 className="search_page_mini_title">{products.name}</h1>
+                            <h1 className="search_page_mini_title">{prods.name}</h1>
                         </div>
                         <div className="search_page_filter_button">
                             <FilterButton onPress={() => { console.log("Filter button pressed") }} />
@@ -52,7 +71,8 @@ const SearchScreen: FC = () => {
                         })}
                     </div>
                     <br></br>
-                    <RectangleArrowButton invert text="Load-More" onPress={function (): void { }} />
+                    {noMore ? <></> : <RectangleArrowButton invert text="Load More" onPress={loadMoreHandler} />}
+                    <br /> <br />
                 </div>
             </div>
         </>
