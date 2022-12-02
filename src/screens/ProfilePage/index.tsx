@@ -69,7 +69,7 @@ const ProfileScreen: FC = () => {
                         <div className="profile_page_data_container">
                             <text className="profile_page_data_container_text">Customer</text>
                             <InputField title="Name" placeHolder="" text={name} setText={setName} />
-                            <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
+                            <InputField title="Email" placeHolder="" text={email} setText={setEmail} editable={false} />
                             <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
                             <InputField title="Address" placeHolder="" text={address} setText={setAddress} />
                         </div>
