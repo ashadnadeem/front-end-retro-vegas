@@ -48,9 +48,11 @@ const ProfileScreen: FC = () => {
                 </div>
 
                 <div className="profile_page_content">
-                    <Snackbar open={response == "Updated" || response == "Error occured."}
-                        autoHideDuration={6000}>
-                        <Alert severity={response == "Updated" ? "success" : "error"}
+                    <Snackbar
+                        onClose = {() => setResponse("")}
+                        open={response == "Updated" || response == "Error occured."}
+                        autoHideDuration={2000}>
+                        <Alert severity={response == "Updated" || response == "Error occured."? "success" : "error"}
                             sx={{ width: "100%" }}>
                             {response}
                         </Alert>
