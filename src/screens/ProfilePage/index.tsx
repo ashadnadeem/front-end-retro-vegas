@@ -1,6 +1,6 @@
 import { Alert, Divider, Snackbar, Stack } from "@mui/material";
 import axios from "axios";
-import React, { FC} from "react"
+import React, { FC } from "react"
 import { useNavigate } from "react-router-dom";
 import { updateUser } from "../../api_calls/customer";
 import { updateStore } from "../../api_calls/store";
@@ -23,13 +23,13 @@ const ProfileScreen: FC = () => {
     const [response, setResponse] = React.useState("");
 
     const save = async () => {
-        const x = await updateUser(email, name, phoneNum);
+        const x = await updateUser(email, name, phoneNum, address);
         const y = await updateStore(storename);
-        if(x === 401 || y === 401){
+        if (x === 401 || y === 401) {
             localStorage.clear();
             navigate('/login');
         } else {
-            if(x === true && y === true) {
+            if (x === true && y === true) {
                 setResponse("Updated");
             } else {
                 setResponse("Error occured.")
@@ -49,44 +49,44 @@ const ProfileScreen: FC = () => {
 
                 <div className="profile_page_content">
                     <Snackbar open={response == "Updated" || response == "Error occured."}
-                     autoHideDuration={6000}>
-                        <Alert severity= {response == "Updated"? "success": "error"}
-                        sx={{ width: "100%" }}>
-                        {response}
+                        autoHideDuration={6000}>
+                        <Alert severity={response == "Updated" ? "success" : "error"}
+                            sx={{ width: "100%" }}>
+                            {response}
                         </Alert>
                     </Snackbar>
 
-                    <PageHeader text={"Profile"}/>
+                    <PageHeader text={"Profile"} />
 
-                        <Stack
-                            direction="row"
-                            divider={
-                                <Divider orientation="vertical" flexItem sx={{ borderRightWidth: 2 }}
-                                style= {{color: '#835F2A9E'}}
-                                />}
-                            spacing={10}
-                        >
-                            <div className="profile_page_data_container">
-                                <text className="profile_page_data_container_text">Customer</text>
-                                <InputField title="Name" placeHolder="" text={name} setText={setName} />
-                                <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
-                                <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
-                                <InputField title="Address" placeHolder="" text={address} setText={setAddress} />
-                            </div>
-                            <div className="profile_page_data_container">
-                                <text className="profile_page_data_container_text">Seller</text>
-                                <InputField title="Store Name" placeHolder="" text={storename} setText={setStoreName} />
-   
-                            </div>
-                            
-                        </Stack>
-
-                        <br></br>
-
-                        <div className="checkout_page_button">
-                            <RectangleArrowButton text="Save" onPress={save} />  
+                    <Stack
+                        direction="row"
+                        divider={
+                            <Divider orientation="vertical" flexItem sx={{ borderRightWidth: 2 }}
+                                style={{ color: '#835F2A9E' }}
+                            />}
+                        spacing={10}
+                    >
+                        <div className="profile_page_data_container">
+                            <text className="profile_page_data_container_text">Customer</text>
+                            <InputField title="Name" placeHolder="" text={name} setText={setName} />
+                            <InputField title="Email" placeHolder="" text={email} setText={setEmail} />
+                            <InputField title="Phone Number" placeHolder="" text={phoneNum} setText={setPhoneNum} />
+                            <InputField title="Address" placeHolder="" text={address} setText={setAddress} />
                         </div>
-                        
+                        <div className="profile_page_data_container">
+                            <text className="profile_page_data_container_text">Seller</text>
+                            <InputField title="Store Name" placeHolder="" text={storename} setText={setStoreName} />
+
+                        </div>
+
+                    </Stack>
+
+                    <br></br>
+
+                    <div className="checkout_page_button">
+                        <RectangleArrowButton text="Save" onPress={save} />
+                    </div>
+
                 </div>
             </div>
         </>

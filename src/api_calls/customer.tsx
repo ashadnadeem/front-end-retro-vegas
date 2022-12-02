@@ -74,7 +74,7 @@ export const removeFromFav = async (productId: String) => {
     }
 }
 
-export const updateUser = async (email: string, name: string, phoneNo: string) => {
+export const updateUser = async (email: string, name: string, phoneNo: string, address: String) => {
     const config = {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}` }
     };
@@ -85,9 +85,7 @@ export const updateUser = async (email: string, name: string, phoneNo: string) =
         email: email,
         name: name,
         phoneNo: phoneNo,
-        password: user.password,
-        role: user.role,
-        status: user.status,
+        address: address
     }, config);
 
     if (response.data.header.error == 0) {
