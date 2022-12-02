@@ -48,7 +48,8 @@ const RegisterForm: FC<Props> = ({ }) => {
 
     return (
         <div className="register_form_group">
-            <Snackbar open={response != ''} autoHideDuration={6000}>
+            <Snackbar open={response != ''} onClose = {() => setResponse("")}
+                        autoHideDuration={2000}>
                 <Alert severity="error" sx={{ width: "100%" }}>
                     {response}
                 </Alert>
