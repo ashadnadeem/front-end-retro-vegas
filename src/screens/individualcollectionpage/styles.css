@@ -58,14 +58,16 @@
     font-family: 'Inter';
     font-style: italic;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
-    color: #E7DCCA;
+    margin-top: 8%;
+    color: #6D5220;
 }
 
 .ind_colletion_page_gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    width: 90%;
+    width: 85%;
+    margin-left: 2.5%;
 }
