@@ -51,7 +51,6 @@ export const searchProduct = async (name: String, offset: Number) => {
     const response = await axios.post(`${BaseURL}/product/search`, body, config);
     console.log(response.data.header.error);
     if (response.data.header.error === 0) {
-        console.log(response.data.body.product);
         // localStorage.setItem('productsOfCategory', JSON.stringify(response.data.body.product));
         return response.data.body.product;
     } else {
@@ -59,10 +58,11 @@ export const searchProduct = async (name: String, offset: Number) => {
     }
 }
 
-export const autoComplete = async (name: String) => {
+export const autoComplete = async (name: String, offset?: Number, auto?: Boolean) => {
     const body = {
         "keyword": name,
-        "auto": true
+        "auto": auto ?? true,
+        "offset": offset ?? 0
     }
     const response = await axios.post(`${BaseURL}/elasticProd/search`, body);
     // console.log(response.data.header.error);
@@ -72,6 +72,7 @@ export const autoComplete = async (name: String) => {
             "suggestions": response.data.body.auto_complete,
             "products": response.data.body.products
         };
+        console.log(result.products);
         return result;
     } else {
         return response.data.header.errorMessage;

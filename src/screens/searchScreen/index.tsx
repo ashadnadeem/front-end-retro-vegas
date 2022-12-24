@@ -8,6 +8,7 @@ import ProductCard from "../../components/Cards/ProductCard";
 import { DefaultHeader } from "../../components/Headers/DefaultHeader";
 import SearchBar from "../../components/SearchBar";
 import { Product } from "../../models/product_model";
+import { autoComplete } from "../../api_calls/product";
 import './styles.css';
 
 type Props = {
@@ -20,24 +21,69 @@ const SearchScreen: FC<Props> = ({ }) => {
     const [noMore, setNoMore] = useState(false);
     const [searchText, setSearchText] = React.useState("");
     const [products, setProducts] = useState<Product[]>([]);
+    const [auto_complete, setAutoComplete] = React.useState([]);
+    const search_products = []
 
     const prods = state.searchProduct;
-    console.log(prods);
 
     const loadMoreHandler = async () => {
         console.log("Load More");
-        const prods = await searchProduct(searchText, offset + 3);
-        if (prods.length === 0) {
+        await autoComplete(searchText, offset + 3, false).then((res) => {
+            res.products.map((product: Product) => {
+                search_products.push(product);
+            });
+        }).catch((err) => {
+            console.log(err);
+        });
+        
+        if (search_products.length === 0) {
             setNoMore(true);
         }
-        setProducts([...products, ...prods]);
+        setProducts([...products, ...search_products]);
         setOffset(offset + 3);
     };
+    
     useEffect(() => {
         setProducts(prods);
         setSearchText(state.query);
         console.log(`successfully fetched products: ${prods.length}`);
     }, [prods]);
+
+    const getHighlightedText = (text: String, highlight: String) => {
+        // Split text on highlight term, include term itself into parts, ignore case
+        const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+        return <span>{parts.map(part => part.toLowerCase() === highlight.toLowerCase() ? <b>{part}</b> : part)}</span>;
+    }
+
+
+    const replaceThis = async (suggestion: string) => {
+        setSearchText(suggestion);
+        const prod = await searchProduct(suggestion, 0);
+        setProducts(prod)
+        setAutoComplete([]);
+        return;
+    }
+
+    const textChangeHandler = async (text: string) => {
+        setProducts([]);
+        setOffset(0);
+        const suggest = [];
+        await autoComplete(text, offset, false).then((res) => {
+            res.suggestions.map((suggestion: String) => {
+                suggest.push(suggestion);
+            });
+            res.products.map((product: Product) => {
+                search_products.push(product);
+            });
+        }).catch((err) => {
+            console.log(err);
+        });
+        setSearchText(text);
+        setAutoComplete(suggest);
+        setProducts(search_products);
+        setNoMore(false);
+    }
+
 
 
     return (
@@ -51,7 +97,19 @@ const SearchScreen: FC<Props> = ({ }) => {
                         <BackButton />
                     </div>
                     <div className="search_page_searchbar">
-                        <SearchBar placeHolder="Search" text={searchText} setText={setSearchText} />
+                        <div className="search_page_search">
+                            <SearchBar placeHolder="Search" text={searchText} setText={textChangeHandler} />
+                        </div>
+                        {auto_complete.length > 0 && searchText.length > 0 ?
+                            <div className="search_page_auto_box">
+                                {auto_complete.map((suggestion: string) => {
+                                    // return <h1 className="home_page_suggestion">{suggestion}</h1>
+                                    return <h1 className="search_page_suggestion" onClick={() => replaceThis(suggestion)}>{getHighlightedText(suggestion, searchText)}</h1>
+                                })}
+                                <></>
+                            </div>
+                            : <div style={{ "height": "18%" }}></div>
+                        }
                     </div>
                     <div className="search_page_title_header">
                         <div className="search_page_title_text_group">
